@@ -293,22 +293,22 @@ END IF;
   -- 2) Crear role 'creator'
   IF NOT EXISTS (
     SELECT 1 FROM public."role" r
-    JOIN public."digital_resource" d ON r.digital_resource_ptr_id = d.id
-    WHERE r.role_name = 'creator' AND d.creator_id = new_user_id
+    JOIN public."digital_resource" d ON r.digitalresource_ptr_id = d.id
+    WHERE r.role_name = 'CREATOR' AND d.creator_id = new_user_id
   ) THEN
     WITH digital_resource AS (
       INSERT INTO public."digital_resource" (creator_id, created_at, deleted)
       VALUES (new_user_id, NOW(), false)
       RETURNING id
     )
-    INSERT INTO public."role" (digital_resource_ptr_id, role_name)
-    VALUES ((SELECT id FROM resource), 'creator');
+    INSERT INTO public."role" (digitalresource_ptr_id, role_name)
+    VALUES ((SELECT id FROM digital_resource), 'CREATOR');
 END IF;
 
   -- 3) Crear equipo 'team_patata'
   IF NOT EXISTS (
     SELECT 1 FROM public."team" t
-    JOIN public."digital_resource" d ON t.digital_resource_ptr_id = d.id
+    JOIN public."digital_resource" d ON t.digitalresource_ptr_id = d.id
     WHERE t.name = 'team_patata' AND d.creator_id = new_user_id
   ) THEN
     WITH digital_resource AS (
@@ -316,7 +316,7 @@ END IF;
       VALUES (new_user_id, NOW(), false)
       RETURNING id
     )
-    INSERT INTO public."team" (digital_resource_ptr_id, name)
+    INSERT INTO public."team" (digitalresource_ptr_id, name)
     VALUES ((SELECT id FROM digital_resource), 'team_patata');
 END IF;
 
@@ -326,15 +326,15 @@ END IF;
 role_id INTEGER;
     team_id INTEGER;
 BEGIN
-SELECT r.digital_resource_ptr_id INTO role_id
+SELECT r.digitalresource_ptr_id INTO role_id
 FROM public."role" r
-         JOIN public."digital_resource" d ON r.digital_resource_ptr_id = d.id
-WHERE r.role_name = 'creator' AND d.creator_id = new_user_id
+         JOIN public."digital_resource" d ON r.digitalresource_ptr_id = d.id
+WHERE r.role_name = 'CREATOR' AND d.creator_id = new_user_id
     LIMIT 1;
 
-SELECT t.digital_resource_ptr_id INTO team_id
+SELECT t.digitalresource_ptr_id INTO team_id
 FROM public."team" t
-         JOIN public."digital_resource" d ON t.digital_resource_ptr_id = d.id
+         JOIN public."digital_resource" d ON t.digitalresource_ptr_id = d.id
 WHERE t.name = 'team_patata' AND d.creator_id = new_user_id
     LIMIT 1;
 
@@ -348,7 +348,7 @@ IF NOT EXISTS (
         VALUES (new_user_id, NOW(), false)
         RETURNING id
       )
-      INSERT INTO public."membership" (digital_resource_ptr_id, member_id, user_role_id, user_team_id)
+      INSERT INTO public."membership" (digitalresource_ptr_id, member_id, user_role_id, user_team_id)
       VALUES ((SELECT id FROM digital_resource), new_user_id, role_id, team_id);
 END IF;
 
@@ -358,7 +358,7 @@ project_id INTEGER;
 BEGIN
       IF NOT EXISTS (
         SELECT 1 FROM public."project" p
-        JOIN public."digital_resource" d ON p.digital_resource_ptr_id = d.id
+        JOIN public."digital_resource" d ON p.digitalresource_ptr_id = d.id
         WHERE p.name = 'proyecto_cultivos_herbaceos' AND d.creator_id = new_user_id
       ) THEN
         WITH digital_resource AS (
@@ -366,13 +366,13 @@ BEGIN
           VALUES (new_user_id, NOW(), false)
           RETURNING id
         )
-        INSERT INTO public."project" (digital_resource_ptr_id, name, active, finished)
+        INSERT INTO public."project" (digitalresource_ptr_id, name, active, finished)
         VALUES ((SELECT id FROM digital_resource), 'proyecto_cultivos_herbaceos', true, false);
 END IF;
 
-SELECT p.digital_resource_ptr_id INTO project_id
+SELECT p.digitalresource_ptr_id INTO project_id
 FROM public."project" p
-         JOIN public."digital_resource" d ON p.digital_resource_ptr_id = d.id
+         JOIN public."digital_resource" d ON p.digitalresource_ptr_id = d.id
 WHERE p.name = 'proyecto_cultivos_herbaceos' AND d.creator_id = new_user_id
     LIMIT 1;
 
@@ -386,7 +386,7 @@ IF NOT EXISTS (
           VALUES (new_user_id, NOW(), false)
           RETURNING id
         )
-        INSERT INTO public."assignations" (digital_resource_ptr_id, assignated_project_id, assignated_team_id, assignation_date)
+        INSERT INTO public."assignations" (digitalresource_ptr_id, assignated_project_id, assignated_team_id, assignation_date)
         VALUES ((SELECT id FROM digital_resource), project_id, team_id, NOW());
 END IF;
 
