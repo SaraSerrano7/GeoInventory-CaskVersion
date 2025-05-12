@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS auth_user (
     );
 
 -- --------------------------------------------------
--- 1) Tabla base de historial (DigitalResource)
+-- 1) Tabla base de historial (Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS digital_resource (
                                                 id SERIAL PRIMARY KEY,
@@ -46,45 +46,45 @@ CREATE TABLE IF NOT EXISTS digital_resource (
 
 
 -- --------------------------------------------------
--- 2) Equipos (hereda de DigitalResource)
+-- 2) Equipos (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS team (
-                                    digitalresource_ptr_id INTEGER PRIMARY KEY
+                                    digital_resource_ptr_id INTEGER PRIMARY KEY
                                     REFERENCES digital_resource(id) ON DELETE CASCADE,
     name VARCHAR(50) NOT NULL
     );
 
 
 -- --------------------------------------------------
--- 3) Roles (hereda de DigitalResource)
+-- 3) Roles (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS role (
-                                    digitalresource_ptr_id INTEGER PRIMARY KEY
+                                    digital_resource_ptr_id INTEGER PRIMARY KEY
                                     REFERENCES digital_resource(id) ON DELETE CASCADE,
     role_name roles_choices NOT NULL
     );
 
 
 -- --------------------------------------------------
--- 4) Membership (hereda de DigitalResource)
+-- 4) Membership (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS membership (
-                                          digitalresource_ptr_id INTEGER PRIMARY KEY
+                                          digital_resource_ptr_id INTEGER PRIMARY KEY
                                           REFERENCES digital_resource(id) ON DELETE CASCADE,
     member_id INTEGER NOT NULL
     REFERENCES auth_user(id) ON DELETE CASCADE,
     user_team_id INTEGER
-    REFERENCES team(digitalresource_ptr_id) ON DELETE SET NULL,
+    REFERENCES team(digital_resource_ptr_id) ON DELETE SET NULL,
     user_role_id INTEGER NOT NULL
-    REFERENCES role(digitalresource_ptr_id) ON DELETE SET DEFAULT
+    REFERENCES role(digital_resource_ptr_id) ON DELETE SET DEFAULT
     );
 
 
 -- --------------------------------------------------
--- 5) Proyectos (hereda de DigitalResource)
+-- 5) Proyectos (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS project (
-                                       digitalresource_ptr_id INTEGER PRIMARY KEY
+                                       digital_resource_ptr_id INTEGER PRIMARY KEY
                                        REFERENCES digital_resource(id) ON DELETE CASCADE,
     name VARCHAR(200) NOT NULL,
     active BOOLEAN NOT NULL DEFAULT TRUE,
@@ -96,21 +96,21 @@ CREATE TABLE IF NOT EXISTS project (
 -- 6) Asignaciones de equipos a proyectos (hereda)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS assignations (
-                                            digitalresource_ptr_id INTEGER PRIMARY KEY
+                                            digital_resource_ptr_id INTEGER PRIMARY KEY
                                             REFERENCES digital_resource(id) ON DELETE CASCADE,
     assignated_project_id INTEGER
-    REFERENCES project(digitalresource_ptr_id) ON DELETE SET NULL,
+    REFERENCES project(digital_resource_ptr_id) ON DELETE SET NULL,
     assignated_team_id INTEGER
-    REFERENCES team(digitalresource_ptr_id) ON DELETE SET NULL,
+    REFERENCES team(digital_resource_ptr_id) ON DELETE SET NULL,
     assignation_date TIMESTAMPTZ NOT NULL DEFAULT now()
     );
 
 
 -- --------------------------------------------------
--- 7) Archivos (hereda de DigitalResource)
+-- 7) Archivos (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS file (
-                                    digitalresource_ptr_id INTEGER PRIMARY KEY
+                                    digital_resource_ptr_id INTEGER PRIMARY KEY
                                     REFERENCES digital_resource(id) ON DELETE CASCADE,
     name VARCHAR(200) NOT NULL
     );
@@ -120,64 +120,64 @@ CREATE TABLE IF NOT EXISTS file (
 -- 8) Accesos de equipos a archivos (hereda)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS access (
-                                      digitalresource_ptr_id INTEGER PRIMARY KEY
+                                      digital_resource_ptr_id INTEGER PRIMARY KEY
                                       REFERENCES digital_resource(id) ON DELETE CASCADE,
     accessed_file_id INTEGER
-    REFERENCES file(digitalresource_ptr_id) ON DELETE SET NULL,
+    REFERENCES file(digital_resource_ptr_id) ON DELETE SET NULL,
     accessing_team_id INTEGER
-    REFERENCES team(digitalresource_ptr_id) ON DELETE SET NULL
+    REFERENCES team(digital_resource_ptr_id) ON DELETE SET NULL
     );
 
 
 -- --------------------------------------------------
--- 9) Carpetas (hereda de DigitalResource)
+-- 9) Carpetas (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS folder (
-                                      digitalresource_ptr_id INTEGER PRIMARY KEY
+                                      digital_resource_ptr_id INTEGER PRIMARY KEY
                                       REFERENCES digital_resource(id) ON DELETE CASCADE,
     name VARCHAR(200) NOT NULL,
     parent_id INTEGER
-    REFERENCES folder(digitalresource_ptr_id) ON DELETE SET NULL,
+    REFERENCES folder(digital_resource_ptr_id) ON DELETE SET NULL,
     path VARCHAR(255) NOT NULL
     );
 
 
 -- --------------------------------------------------
--- 10) Ubicaciones (hereda de DigitalResource)
+-- 10) Ubicaciones (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS location (
-                                        digitalresource_ptr_id INTEGER PRIMARY KEY
+                                        digital_resource_ptr_id INTEGER PRIMARY KEY
                                         REFERENCES digital_resource(id) ON DELETE CASCADE,
     located_file_id INTEGER
-    REFERENCES file(digitalresource_ptr_id) ON DELETE SET NULL,
+    REFERENCES file(digital_resource_ptr_id) ON DELETE SET NULL,
     located_project_id INTEGER
-    REFERENCES project(digitalresource_ptr_id) ON DELETE SET NULL,
+    REFERENCES project(digital_resource_ptr_id) ON DELETE SET NULL,
     located_folder_id INTEGER
-    REFERENCES folder(digitalresource_ptr_id) ON DELETE SET NULL,
+    REFERENCES folder(digital_resource_ptr_id) ON DELETE SET NULL,
     path VARCHAR(1024) NOT NULL
     );
 
 
 -- --------------------------------------------------
--- 11) Categorías (hereda de DigitalResource)
+-- 11) Categorías (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS category (
-                                        digitalresource_ptr_id INTEGER PRIMARY KEY
+                                        digital_resource_ptr_id INTEGER PRIMARY KEY
                                         REFERENCES digital_resource(id) ON DELETE CASCADE,
     label VARCHAR(50) NOT NULL UNIQUE
     );
 
 
 -- --------------------------------------------------
--- 12) Clasificaciones (hereda de DigitalResource)
+-- 12) Clasificaciones (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS classification (
-                                              digitalresource_ptr_id INTEGER PRIMARY KEY
+                                              digital_resource_ptr_id INTEGER PRIMARY KEY
                                               REFERENCES digital_resource(id) ON DELETE CASCADE,
     related_file_id INTEGER
-    REFERENCES file(digitalresource_ptr_id) ON DELETE SET NULL,
+    REFERENCES file(digital_resource_ptr_id) ON DELETE SET NULL,
     category_name_id INTEGER
-    REFERENCES category(digitalresource_ptr_id) ON DELETE SET NULL
+    REFERENCES category(digital_resource_ptr_id) ON DELETE SET NULL
     );
 
 
@@ -186,7 +186,7 @@ CREATE TABLE IF NOT EXISTS classification (
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS geojson (
                                        file_ptr_id INTEGER PRIMARY KEY
-                                       REFERENCES file(digitalresource_ptr_id) ON DELETE CASCADE,
+                                       REFERENCES file(digital_resource_ptr_id) ON DELETE CASCADE,
     content_type geojson_type_choices NOT NULL
     );
 
@@ -257,3 +257,139 @@ CREATE TABLE IF NOT EXISTS global_membership (
     related_user_id INTEGER
     REFERENCES auth_user(id) ON DELETE SET NULL
     );
+
+
+
+-- --------------------------------------------------
+-- Rellenar la base de datos con datos de ejemplo
+-- --------------------------------------------------
+
+-- --------------------------------------------------
+-- EJECUCIÓN DE INSERCIÓN DE DATOS DE EJEMPLO
+-- --------------------------------------------------
+
+-- 1) Crear usuario de prueba
+DO $$
+DECLARE
+new_user_id INTEGER;
+BEGIN
+  IF NOT EXISTS (SELECT 1 FROM auth_user WHERE username = 'creatorUser') THEN
+    INSERT INTO public.auth_user (
+      username, email, password, is_superuser, is_staff, is_active, date_joined
+    )
+    VALUES (
+      'creatorUser',
+      'creatorUser@example.com',
+      -- REEMPLAZAR por hash real generado con make_password('jamon')
+--       '$pbkdf2-sha256$260000$RANDOM_SALT_HERE$HASHED_PASSWORD_HERE',
+     'jamon',
+      false, false, true, NOW()
+    )
+    RETURNING id INTO new_user_id;
+ELSE
+SELECT id INTO new_user_id FROM auth_user WHERE username = 'creatorUser';
+END IF;
+
+  -- 2) Crear role 'creator'
+  IF NOT EXISTS (
+    SELECT 1 FROM public."role" r
+    JOIN public."digital_resource" d ON r.digital_resource_ptr_id = d.id
+    WHERE r.role_name = 'creator' AND d.creator_id = new_user_id
+  ) THEN
+    WITH digital_resource AS (
+      INSERT INTO public."digital_resource" (creator_id, created_at, deleted)
+      VALUES (new_user_id, NOW(), false)
+      RETURNING id
+    )
+    INSERT INTO public."role" (digital_resource_ptr_id, role_name)
+    VALUES ((SELECT id FROM resource), 'creator');
+END IF;
+
+  -- 3) Crear equipo 'team_patata'
+  IF NOT EXISTS (
+    SELECT 1 FROM public."team" t
+    JOIN public."digital_resource" d ON t.digital_resource_ptr_id = d.id
+    WHERE t.name = 'team_patata' AND d.creator_id = new_user_id
+  ) THEN
+    WITH digital_resource AS (
+      INSERT INTO public."digital_resource" (creator_id, created_at, deleted)
+      VALUES (new_user_id, NOW(), false)
+      RETURNING id
+    )
+    INSERT INTO public."team" (digital_resource_ptr_id, name)
+    VALUES ((SELECT id FROM digital_resource), 'team_patata');
+END IF;
+
+  -- 4) Obtener IDs necesarios
+  -- (Asegurarse de que solo haya un role y un team creados por este usuario)
+  DECLARE
+role_id INTEGER;
+    team_id INTEGER;
+BEGIN
+SELECT r.digital_resource_ptr_id INTO role_id
+FROM public."role" r
+         JOIN public."digital_resource" d ON r.digital_resource_ptr_id = d.id
+WHERE r.role_name = 'creator' AND d.creator_id = new_user_id
+    LIMIT 1;
+
+SELECT t.digital_resource_ptr_id INTO team_id
+FROM public."team" t
+         JOIN public."digital_resource" d ON t.digital_resource_ptr_id = d.id
+WHERE t.name = 'team_patata' AND d.creator_id = new_user_id
+    LIMIT 1;
+
+-- 5) Crear membership
+IF NOT EXISTS (
+      SELECT 1 FROM public."membership"
+      WHERE member_id = new_user_id AND user_role_id = role_id AND user_team_id = team_id
+    ) THEN
+      WITH digital_resource AS (
+        INSERT INTO public."digital_resource" (creator_id, created_at, deleted)
+        VALUES (new_user_id, NOW(), false)
+        RETURNING id
+      )
+      INSERT INTO public."membership" (digital_resource_ptr_id, member_id, user_role_id, user_team_id)
+      VALUES ((SELECT id FROM digital_resource), new_user_id, role_id, team_id);
+END IF;
+
+    -- 6) Crear proyecto 'proyecto_cultivos_herbaceos'
+    DECLARE
+project_id INTEGER;
+BEGIN
+      IF NOT EXISTS (
+        SELECT 1 FROM public."project" p
+        JOIN public."digital_resource" d ON p.digital_resource_ptr_id = d.id
+        WHERE p.name = 'proyecto_cultivos_herbaceos' AND d.creator_id = new_user_id
+      ) THEN
+        WITH digital_resource AS (
+          INSERT INTO public."digital_resource" (creator_id, created_at, deleted)
+          VALUES (new_user_id, NOW(), false)
+          RETURNING id
+        )
+        INSERT INTO public."project" (digital_resource_ptr_id, name, active, finished)
+        VALUES ((SELECT id FROM digital_resource), 'proyecto_cultivos_herbaceos', true, false);
+END IF;
+
+SELECT p.digital_resource_ptr_id INTO project_id
+FROM public."project" p
+         JOIN public."digital_resource" d ON p.digital_resource_ptr_id = d.id
+WHERE p.name = 'proyecto_cultivos_herbaceos' AND d.creator_id = new_user_id
+    LIMIT 1;
+
+-- 7) Crear asignación
+IF NOT EXISTS (
+        SELECT 1 FROM public."assignations" a
+        WHERE assignated_project_id = project_id AND assignated_team_id = team_id
+      ) THEN
+        WITH digital_resource AS (
+          INSERT INTO public."digital_resource" (creator_id, created_at, deleted)
+          VALUES (new_user_id, NOW(), false)
+          RETURNING id
+        )
+        INSERT INTO public."assignations" (digital_resource_ptr_id, assignated_project_id, assignated_team_id, assignation_date)
+        VALUES ((SELECT id FROM digital_resource), project_id, team_id, NOW());
+END IF;
+
+END;
+END;
+END$$;
