@@ -1,3 +1,7 @@
+
+CREATE EXTENSION IF NOT EXISTS postgis;
+CREATE EXTENSION IF NOT EXISTS postgis_topology;
+
 -- --------------------------------------------------
 -- 0) ENUMs (sólo se crean si no existen)
 -- --------------------------------------------------
