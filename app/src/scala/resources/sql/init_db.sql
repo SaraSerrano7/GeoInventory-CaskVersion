@@ -224,3 +224,36 @@ CREATE TABLE IF NOT EXISTS geojson_feature_properties (
     REFERENCES property_attribute(id) ON DELETE SET NULL,
     attribute_value VARCHAR(250)
     );
+
+
+
+-- --------------------------------------------------
+-- 17) Enumerado para GLOBAL_ROLES_CHOICES
+-- --------------------------------------------------
+DO $$
+BEGIN
+  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'global_roles_choices') THEN
+CREATE TYPE global_roles_choices AS ENUM ('regular', 'superadmin');
+END IF;
+END$$;
+
+
+-- --------------------------------------------------
+-- 18) Tabla GlobalRole
+-- --------------------------------------------------
+CREATE TABLE IF NOT EXISTS global_role (
+                                           id SERIAL PRIMARY KEY,
+                                           name global_roles_choices NOT NULL
+);
+
+
+-- --------------------------------------------------
+-- 19) Tabla GlobalMembership
+-- --------------------------------------------------
+CREATE TABLE IF NOT EXISTS global_membership (
+                                                 id SERIAL PRIMARY KEY,
+                                                 user_type_id INTEGER NOT NULL
+                                                 REFERENCES global_role(id) ON DELETE SET DEFAULT,
+    related_user_id INTEGER
+    REFERENCES auth_user(id) ON DELETE SET NULL
+    );
