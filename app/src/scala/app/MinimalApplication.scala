@@ -50,6 +50,9 @@ object MinimalApplication extends cask.MainRoutes{
       // Split por `;` para ejecutar múltiples sentencias si es necesario
 
       println("[initDb] Ejecutando script completo…")
+//
+//      println(sql)
+//
       statement.execute(sql)
 
 //      for (query <- sql.split(";").map(_.trim).filter(_.nonEmpty)) {
