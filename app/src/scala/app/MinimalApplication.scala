@@ -48,10 +48,14 @@ object MinimalApplication extends cask.MainRoutes{
 //      val sql = Source.fromResource("services/init_db.sql").mkString
 
       // Split por `;` para ejecutar múltiples sentencias si es necesario
-      for (query <- sql.split(";").map(_.trim).filter(_.nonEmpty)) {
-        println(s"[initDb] Ejecutando SQL: ${query.take(60)}…")
-        statement.execute(query)
-      }
+
+      println("[initDb] Ejecutando script completo…")
+      statement.execute(sql)
+
+//      for (query <- sql.split(";").map(_.trim).filter(_.nonEmpty)) {
+//        println(s"[initDb] Ejecutando SQL: ${query.take(60)}…")
+//        statement.execute(query)
+//      }
 
       statement.close()
       connection.close()

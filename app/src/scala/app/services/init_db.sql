@@ -1,19 +1,30 @@
 -- --------------------------------------------------
 -- 0) ENUMs (sólo se crean si no existen)
 -- --------------------------------------------------
-DO $$
+DO
+$$
+DECLARE
 BEGIN
-  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'roles_choices') THEN
-CREATE TYPE roles_choices AS ENUM ('GUEST','VIEWER','CREATOR','OWNER','ADMIN');
-END IF;
-  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'geojson_type_choices') THEN
-CREATE TYPE geojson_type_choices AS ENUM ('Feature','FeatureCollection');
-END IF;
-  IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'geojson_attr_type_choices') THEN
-CREATE TYPE geojson_attr_type_choices AS ENUM ('int','float','str','bool');
-END IF;
-END$$;
+    BEGIN
+        CREATE TYPE roles_choices AS ENUM ('GUEST','VIEWER','CREATOR','OWNER','ADMIN');
+        EXCEPTION
+            WHEN duplicate_object THEN NULL;
+    END;
 
+    BEGIN
+        CREATE TYPE geojson_type_choices AS ENUM ('Feature','FeatureCollection');
+        EXCEPTION
+            WHEN duplicate_object THEN NULL;
+    END;
+
+    BEGIN
+        CREATE TYPE geojson_attr_type_choices AS ENUM ('int','float','str','bool');
+        EXCEPTION
+            WHEN duplicate_object THEN NULL;
+    END;
+END;
+$$
+LANGUAGE plpgsql;
 
 -- --------------------------------------------------
 -- 1) Tabla base de historial (DigitalResource)
