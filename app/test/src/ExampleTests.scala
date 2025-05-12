@@ -1,7 +1,8 @@
 package app
 import io.undertow.Undertow
-
 import utest._
+
+import scala.app.MinimalApplication
 
 object ExampleTests extends TestSuite{
   def withServer[T](example: cask.main.Main)(f: String => T): T = {
