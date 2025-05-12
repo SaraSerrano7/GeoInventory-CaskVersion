@@ -1,14 +1,20 @@
 package app
 object MinimalApplication extends cask.MainRoutes{
-  @cask.get("/")
-  def hello() = {
-    "Hello World!"
-  }
+//  @cask.get("/")
+//  def hello() = {
+//    "Hello World!"
+//  }
+//
+//  @cask.post("/do-thing")
+//  def doThing(request: cask.Request) = {
+//    request.text().reverse
+//  }
+//
+//  initialize()
+  override def port: Int = 8080
 
-  @cask.post("/do-thing")
-  def doThing(request: cask.Request) = {
-    request.text().reverse
-  }
+  val userRoutes = new routes.UserRoutes()
+//  val dataRoutes = new routes.DataRoutes()
 
-  initialize()
+  override def allRoutes: Seq[cask.MainRoutes] = Seq(userRoutes)
 }

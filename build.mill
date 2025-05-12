@@ -8,6 +8,12 @@ object app extends ScalaModule {
 
   def ivyDeps = Agg(
     ivy"com.lihaoyi::cask:0.9.7",
+    ivy"org.tpolecat::doobie-core:1.0.0-RC4",
+    ivy"org.tpolecat::doobie-postgres:1.0.0-RC4",
+    ivy"org.tpolecat::doobie-hikari:1.0.0-RC4",
+    ivy"org.postgresql:postgresql:42.7.3",
+    ivy"org.typelevel::cats-effect:3.5.4"
+
   )
   object test extends ScalaTests with TestModule.Utest{
 
