@@ -4,11 +4,16 @@ import mill._, scalalib._
 object app extends ScalaModule {
   def scalaVersion = "2.13.15"
 
-  def resources = T.sources(millSourcePath / "src" / "scala" / "resources")
+  def resources: T[Seq[PathRef]] = T.sources(millSourcePath / "src" / "scala" / "resources")
 
 
-  def ivyDeps = Agg(
+  def ivyDeps: T[Agg[Dep]] = Agg(
+    ivy"com.github.pathikrit::better-files:3.9.2",
     ivy"com.lihaoyi::cask:0.9.7",
+    ivy"com.lihaoyi::os-lib:0.9.1",
+    ivy"com.lihaoyi::ujson:3.1.3",
+//    ivy"org.apache.commons:commons-fileupload:1.4",
+    ivy"commons-io:commons-io:2.11.0",
     ivy"org.tpolecat::doobie-core:1.0.0-RC4",
     ivy"org.tpolecat::doobie-postgres:1.0.0-RC4",
     ivy"org.tpolecat::doobie-hikari:1.0.0-RC4",
@@ -18,7 +23,7 @@ object app extends ScalaModule {
   )
   object test extends ScalaTests with TestModule.Utest{
 
-    def ivyDeps = Agg(
+    def ivyDeps: T[Agg[Dep]] = Agg(
       ivy"com.lihaoyi::utest::0.8.4",
       ivy"com.lihaoyi::requests::0.9.0",
     )
