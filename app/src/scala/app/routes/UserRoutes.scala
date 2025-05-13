@@ -9,6 +9,20 @@ import java.nio.charset.StandardCharsets
 import cask.{FormFile, FormValue, Response}
 import sourcecode.Text.generate
 
+import java.sql.Statement
+
+//import org.locationtech.jts.io.geojson.GeoJsonReader
+//import org.locationtech.jts.io.WKTWriter
+//import org.wololo.jts2geojson.GeoJSONReader
+//import org.wololo.geojson.GeoJSONFactory
+//
+//import org.locationtech.jts.geom.Geometry
+//import org.locationtech.jts.io.WKTWriter
+//import org.wololo.jts2geojson.GeoJSONReader
+
+
+
+
 import java.sql.{Connection, DriverManager, PreparedStatement, ResultSet, Types}
 import java.nio.file.{Files, Path, Paths}
 //import org.apache.commons.fileupload._
@@ -77,7 +91,7 @@ class UserRoutes extends cask.MainRoutes {
     """.update.run.transact(xa).unsafeRunSync()
     */
 
-      sql_queries(fileName.value, contentType, teamsList, project.value, location.value, categoriesList)
+      sql_queries(fileName.value, contentType, teamsList, project.value, location.value, categoriesList, geojsonData)
 
 
       Response(s"Archivo '$originalName' guardado como '${fileName.value}' en proyecto '${project.value}', ubicación '${location.value}'.", 200)
@@ -126,7 +140,7 @@ class UserRoutes extends cask.MainRoutes {
     }
   }
 
-  def sql_queries(fileName: String, contentType: String, teamsList: Seq[String], project: String, location: String, categoriesList: Seq[String]): Unit = {
+  def sql_queries(fileName: String, contentType: String, teamsList: Seq[String], project: String, location: String, categoriesList: Seq[String], geojsonData: Value.Value): Unit = {
 
     val url_db = "jdbc:postgresql://localhost:5432/LocalGeoInventory_Cask"
     val user = "xxxxxx"
@@ -284,6 +298,8 @@ class UserRoutes extends cask.MainRoutes {
         ps.close()
       }
 
+      bulk_insert_features_and_properties(conn, geojsonId, geojsonData)
+
       conn.commit()
       Response("""{"status":"success"}""", 200)
 
@@ -295,6 +311,306 @@ class UserRoutes extends cask.MainRoutes {
       if (ps   != null) ps.close()
       if (conn != null) conn.close()
     }
+  }
+
+  def bulk_insert_features_and_properties(conn: Connection, geojsonId: Long, geojsonData: Value.Value): Unit = {
+    // 1. Preparamos el lector/ escritor de JTS
+//    val geoReader = new GeoJsonReader()
+//    val wktWriter = new WKTWriter()
+
+    // 1) Extraemos las Features de ujson.Value
+    try {
+      val features: Seq[ujson.Value] = geojsonData("type").str match {
+        case "FeatureCollection" =>
+          println("Matched FeatureCollection")
+          geojsonData("features").arr.toSeq
+        case "Feature" =>
+          println("Matched Feature")
+          Seq(geojsonData)
+        case other =>
+          throw new Exception(s"Tipo inesperado de GeoJSON: $other")
+      }
+
+      // 2) Construimos los triples (file_id, feature_type, geojsonGeometryString)
+      val featureRows: Seq[(Long, String, String)] = features.map { feat =>
+        val geomNode = feat("geometry")
+        val geomType = geomNode("type").str
+        // render() produce un String JSON válido
+        val geomJson = geomNode.render()
+        (geojsonId, geomType, geomJson)
+      }
+
+      // 3) Preparamos el batch con ST_GeomFromGeoJSON
+      val sqlFeature =
+        """
+          |INSERT INTO public."geojson_feature"(file_id, feature_type, geometry)
+          |VALUES (?, ?, ST_SetSRID(ST_GeomFromGeoJSON(?), 4326))
+  """.stripMargin
+
+//      val psFeature = conn.prepareStatement(sqlFeature)
+      val psFeature = conn.prepareStatement(sqlFeature, Statement.RETURN_GENERATED_KEYS)
+
+      featureRows.foreach { case (fid, ftype, gj) =>
+        psFeature.setLong(1, fid)
+        psFeature.setString(2, ftype)
+        psFeature.setString(3, gj)
+        psFeature.addBatch()
+      }
+//      psFeature.executeBatch()
+      val countsGeom: Array[Int] = psFeature.executeBatch()
+      println(s"[DEBUG] Insert geom: expected=${featureRows.size}, actualCounts=${countsGeom.mkString(",")}")
+      // Comprueba que no haya -3 (STATEMENT_SUCCESS_NO_INFO) si usas RETURN_GENERATED_KEYS
+      if (countsGeom.length != featureRows.size) {
+        throw new Exception(s"Número de geometrías insertadas (${countsGeom.length}) distinto a esperado (${featureRows.size})")
+      }
+
+      // 1) Recuperar los feature_id generados
+      val rsFeatKeys = psFeature.getGeneratedKeys()
+      val featureIds = Iterator.continually(rsFeatKeys).takeWhile(_.next()).map(_.getLong(1)).toList
+      rsFeatKeys.close()
+      psFeature.close()
+      println(s"[DEBUG] featureIds generated: $featureIds")
+      if (featureIds.size != featureRows.size) {
+        throw new Exception(s"Número de featureIds (${featureIds.size}) distinto a geometrías (${featureRows.size})")
+      }
+
+      // 2) Extraer atributos únicos de los JSON
+      val attributes      = scala.collection.mutable.LinkedHashMap.empty[(String, String), Long]
+      val attributeRows   = features.flatMap { feat =>
+        feat.obj.get("properties").map(_.obj.toSeq).getOrElse(Seq.empty).map {
+          case (k, v) =>
+            val tpe = v match {
+              case ujson.Str(_) =>
+                "str"
+              case ujson.Bool(_) =>
+                "bool"
+              case ujson.Num(n) if n.isValidInt =>
+                "int"
+              case ujson.Num(_) =>
+                "float"
+              case other =>
+                throw new Exception(s"Tipo de propiedad no soportado para ENUM: $other")
+            }
+            (k, tpe)
+        }
+      }.distinct
+
+
+      // 3) Bulk‐insert de atributos
+      val sqlAttr = """
+                      |INSERT INTO public."property_attribute"(attribute_name, attribute_type)
+                      |VALUES (?, ?)
+""".stripMargin
+
+      val psAttr = conn.prepareStatement(sqlAttr, java.sql.Statement.RETURN_GENERATED_KEYS)
+
+      // 0) Obtenemos los valores permitidos del ENUM
+      val allowedTypes = {
+        val sqlEnum = "SELECT unnest(enum_range(NULL::geojson_attr_type_choices))"
+        val psEnum  = conn.prepareStatement(sqlEnum)
+        val rsEnum  = psEnum.executeQuery()
+        val buf     = scala.collection.mutable.ListBuffer.empty[String]
+        while (rsEnum.next()) {
+          buf += rsEnum.getString(1)
+        }
+        rsEnum.close()
+        psEnum.close()
+        buf.toSet
+      }
+      println(s"[DEBUG] Allowed attribute types: $allowedTypes")
+
+
+
+      attributeRows.foreach { case (name, tpe) =>
+        psAttr.setString(1, name)
+//        psAttr.setString(2, tpe)
+        psAttr.setObject(2, tpe, Types.OTHER)
+        psAttr.addBatch()
+      }
+//      psAttr.executeBatch()
+      val countsAttr: Array[Int] = psAttr.executeBatch()
+      println(s"[DEBUG] Insert attrs: expected=${attributeRows.size}, actualCounts=${countsAttr.mkString(",")}")
+      if (countsAttr.length != attributeRows.size) {
+        throw new Exception(s"Número de atributos insertados (${countsAttr.length}) distinto a esperado (${attributeRows.size})")
+      }
+
+      // 4) Leer los IDs generados y poblar el mapa
+      val rsAttrKeys = psAttr.getGeneratedKeys()
+      attributeRows.foreach { key =>
+        if (rsAttrKeys.next()) {
+          attributes(key) = rsAttrKeys.getLong(1)
+        }
+      }
+      rsAttrKeys.close()
+      psAttr.close()
+      println(s"[DEBUG] attributes map: $attributes")
+
+
+      // 5) Preparar e insertar las relaciones Feature ↔ Atributo
+      val sqlFeatProp = """
+                          |INSERT INTO public."geojson_feature_properties"
+                          |  (feature_id, attribute_id, attribute_value)
+                          |VALUES (?, ?, ?)
+""".stripMargin
+
+      val psFP = conn.prepareStatement(sqlFeatProp)
+      (features zip featureIds).foreach { case (featJson, featId) =>
+        featJson.obj.get("properties").foreach { props =>
+          props.obj.foreach { case (k, v) =>
+            // Localizar el attribute_id en el mapa
+            val tpe = v match {
+              case ujson.Str(_) =>
+                "str"
+              case ujson.Bool(_) =>
+                "bool"
+              case ujson.Num(n) if n.isValidInt =>
+                "int"
+              case ujson.Num(_) =>
+                "float"
+              case other =>
+                throw new Exception(s"Tipo de propiedad no soportado para ENUM: $other")
+            }
+            val attrId = attributes((k, tpe))
+            psFP.setLong(1, featId)
+            psFP.setLong(2, attrId)
+            psFP.setString(3, v.toString())
+            psFP.addBatch()
+          }
+        }
+      }
+//      psFP.executeBatch()
+      val countsRel: Array[Int] = psFP.executeBatch()
+      println(
+        s"[DEBUG] Insert relations: expected=${features.size}*propsPerFeature, counts=${countsRel.mkString(",")}"
+      )
+      if (countsRel.exists(_ <= 0)) {
+        throw new Exception(s"Alguna relación Feature–Atributo no se insertó correctamente: ${countsRel.mkString(",")}")
+      }
+      psFP.close()
+    } catch {
+      case e: Exception =>
+        println(e.getMessage)
+    }
+
+
+
+
+    //#######################
+
+//    // 2. Extraemos la lista de Features de ujson.Value
+//    val featuresJson = geojsonData("type").str match {
+//      case "Feature"           => Seq(geojsonData)
+//      case "FeatureCollection" => geojsonData("features").arr.toSeq.map(_.asInstanceOf[ujson.Value])
+//      case other               => throw new Exception(s"Tipo inesperado: $other")
+//    }
+//
+//    // 3. Creamos las tuplas (file_id, feature_type, wkt) y las guardamos en `featureRows`
+//    val featureRows: Seq[(Long, String, String)] = featuresJson.map { feat =>
+//      val geomJson = feat("geometry").toString()
+//      val geom     = geoReader.read(geomJson)
+//      val wkt      = wktWriter.write(geom)
+//      val geomType = feat("geometry")("type").str
+//      (geojsonId, geomType, wkt)
+//    }
+//
+//    // 4. Bulk insert de Features con batch y recuperación de IDs generados
+//    val sqlFeature =
+//      """
+//        |INSERT INTO public."Files_geojsonfeature"(file_id, feature_type, geometry)
+//        |VALUES (?, ?, ST_GeomFromText(?, 4326))
+//  """.stripMargin
+//
+//    val psFeature = conn.prepareStatement(sqlFeature, java.sql.Statement.RETURN_GENERATED_KEYS)
+//    featureRows.foreach { case (fid, ftype, wkt) =>
+//      psFeature.setLong(1, fid)
+//      psFeature.setString(2, ftype)
+//      psFeature.setString(3, wkt)
+//      psFeature.addBatch()
+//    }
+//    psFeature.executeBatch()
+//
+//    // Leer los feature_id generados
+//    val rsFeatKeys = psFeature.getGeneratedKeys()
+//    val featureIds = Iterator
+//      .continually(rsFeatKeys)
+//      .takeWhile(_.next())
+//      .map(_.getLong(1))
+//      .toList
+//
+//    rsFeatKeys.close()
+//    psFeature.close()
+//
+//    // 5. Extraer atributos únicos
+//    val attributes = scala.collection.mutable.LinkedHashMap.empty[(String, String), Long]
+//    val attributeRows = featuresJson.flatMap { feat =>
+//      feat.obj.get("properties").map(_.obj.toSeq).getOrElse(Seq.empty).map {
+//        case (k, v) =>
+//          val tpe = v match {
+//            case ujson.Str(_)  => "String"
+//            case ujson.Num(_)  => "Double"
+//            case ujson.Bool(_) => "Boolean"
+//            case _             => "Json"
+//          }
+//          (k, tpe)
+//      }
+//    }.distinct
+//
+//    // 6. Bulk insert de atributos
+//    val sqlAttr =
+//      """
+//        |INSERT INTO public."Files_propertyattribute"(attribute_name, attribute_type)
+//        |VALUES (?, ?)
+//  """.stripMargin
+//
+//    val psAttr = conn.prepareStatement(sqlAttr, java.sql.Statement.RETURN_GENERATED_KEYS)
+//    attributeRows.foreach { case (name, tpe) =>
+//      psAttr.setString(1, name)
+//      psAttr.setString(2, tpe)
+//      psAttr.addBatch()
+//    }
+//    psAttr.executeBatch()
+//
+//    // Leer los IDs y poblar el mapa
+//    val rsAttrKeys = psAttr.getGeneratedKeys()
+//    attributeRows.foreach { key =>
+//      if (rsAttrKeys.next()) {
+//        attributes(key) = rsAttrKeys.getLong(1)
+//      }
+//    }
+//    rsAttrKeys.close()
+//    psAttr.close()
+//
+//    // 7. Preparar relaciones Feature ↔ Atributo
+//    val sqlFeatProp =
+//      """
+//        |INSERT INTO public."Files_geojsonfeatureproperties"
+//        |  (feature_id, attribute_id, attribute_value)
+//        |VALUES (?, ?, ?)
+//  """.stripMargin
+//
+//    val psFP = conn.prepareStatement(sqlFeatProp)
+//    for (((featJson, wkt), featId) <- featuresJson.zip(featureRows.map(_._3)).zip(featureIds)) {
+//      featJson.obj.get("properties").foreach { props =>
+//        props.obj.foreach { case (k, v) =>
+//          val attrId = attributes((k, v match {
+//            case ujson.Str(_)  => "String"
+//            case ujson.Num(_)  => "Double"
+//            case ujson.Bool(_) => "Boolean"
+//            case _             => "Json"
+//          }))
+//          // Pasamos el valor bruto; ajusta según tipo PostgreSQL
+//          psFP.setLong(1, featId)
+//          psFP.setLong(2, attrId)
+//          psFP.setString(3, v.toString())
+//          psFP.addBatch()
+//        }
+//      }
+//    }
+//    psFP.executeBatch()
+//    psFP.close()
+
+
+
   }
 
   initialize()
