@@ -1,0 +1,19 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [-3.70379, 40.41678],
+        [-3.70539, 40.41578],
+        [-3.70749, 40.41698],
+        [-3.70609, 40.41818],
+        [-3.70379, 40.41678]
+      ]
+    ]
+  },
+  "properties": {
+    "name": "Ejemplo de Polígono en Madrid",
+    "year": 2025
+  }
+}
