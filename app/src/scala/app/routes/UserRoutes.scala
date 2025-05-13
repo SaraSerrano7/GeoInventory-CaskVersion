@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets
 import cask.{FormFile, FormValue, Response}
 import sourcecode.Text.generate
 
+import java.sql.{Connection, DriverManager, PreparedStatement, ResultSet, Types}
 import java.nio.file.{Files, Path, Paths}
 //import org.apache.commons.fileupload._
 //import org.apache.commons.fileupload.disk._
@@ -33,6 +34,9 @@ class UserRoutes extends cask.MainRoutes {
                   geojson_file: FormFile): cask.Response[String] = {
     try {
 
+      val teamsList      = teams.map(_.value)
+      val categoriesList = categories.map(_.value)
+
       // Extraemos bytes y nombre original
 //      val bytes = geojson_file.bytes
       // 1) Leer el fichero temporal que Cask ya ha escrito
@@ -42,9 +46,38 @@ class UserRoutes extends cask.MainRoutes {
         Files.readAllBytes(filePath)
       val originalName = geojson_file.fileName
 
-      // 2) Hacer parse de los JSON-strings si los necesitas como listas
-      val teamsList      = teams.map(_.value)
-      val categoriesList = categories.map(_.value)
+      val geojsonContent = new String(bytes, StandardCharsets.UTF_8)
+      if (geojsonContent.trim.isEmpty) {
+        return Response(
+          """{"error":"No se recibió un GeoJSON válido"}""",
+          400
+        )
+      }
+      val geojsonData = ujson.read(geojsonContent)
+      val contentType     = geojsonData("type").str
+      val GEOJSON_TYPE_CHOICES = List(
+        ("Feature", "Feature"),
+        ("FeatureCollection", "FeatureCollection")
+        // …otros tipos si los hay
+      )
+      val contentTypeId = GEOJSON_TYPE_CHOICES
+        .indexWhere(_._1 == contentType) match {
+        case -1 =>
+          return Response(
+            s"""{"error":"Tipo de GeoJSON '$contentType' no soportado"}""",
+            400
+          )
+        case idx => idx
+      }
+
+      /*
+    sql"""
+      INSERT INTO geojson (creator_id, file_name, content_type_id, json_content)
+      VALUES ($creatorId, ${fileName.value}, $contentTypeId, $geojsonContent)
+    """.update.run.transact(xa).unsafeRunSync()
+    */
+
+      sql_queries(fileName.value, contentType, teamsList, project.value, location.value, categoriesList)
 
 
       Response(s"Archivo '$originalName' guardado como '${fileName.value}' en proyecto '${project.value}', ubicación '${location.value}'.", 200)
@@ -85,11 +118,182 @@ class UserRoutes extends cask.MainRoutes {
 
     } catch {
       case e: ujson.ParseException =>
-        Response(s"Error al parsear los datos: ${e.getMessage}", 500)
+        Response(s"Error al parsear los datos o GeoJSON inválido: ${e.getMessage}", 400)
 
       case e: Exception =>
         Response(s"Error al procesar la subida: ${e.getMessage}", 500)
 
+    }
+  }
+
+  def sql_queries(fileName: String, contentType: String, teamsList: Seq[String], project: String, location: String, categoriesList: Seq[String]): Unit = {
+
+    val url_db = "jdbc:postgresql://localhost:5432/LocalGeoInventory_Cask"
+    val user = "xxxxxx"
+    val password = "xxxxxx"
+
+    var conn: Connection  = null
+    var ps:   PreparedStatement = null
+    try {
+      Class.forName("org.postgresql.Driver")
+      conn = DriverManager.getConnection(url_db, user, password)
+      conn.setAutoCommit(false)  // trabajar dentro de una transacción
+
+      // 2) INSERT digital_resource + file + geojson → recuperar geojson_id
+      //    Postgres JDBC soporta RETURNING … getGeneratedKeys; alternativamente
+      //    puedes usar "SELECT currval('…_seq')"
+      val sqlGeo =
+        """
+          |WITH dr AS (
+          |  INSERT INTO public."digital_resource"
+          |    (creator_id, created_at, deleted)
+          |  VALUES (?, NOW(), false)
+          |  RETURNING id
+          |),
+          |f AS (
+          |  INSERT INTO public."file"
+          |    (digitalresource_ptr_id, name)
+          |  VALUES ((SELECT id FROM dr), ?)
+          |  RETURNING digitalresource_ptr_id
+          |)
+          |INSERT INTO public."geojson"
+          |  (file_ptr_id, content_type)
+          |VALUES ((SELECT digitalresource_ptr_id FROM f), ?)
+          |RETURNING file_ptr_id
+        """.stripMargin
+
+      ps = conn.prepareStatement(sqlGeo)
+      ps.setInt(1, 16)
+      ps.setString(2, fileName.value)
+      ps.setObject(3, contentType, Types.OTHER)
+      val rsGeo: ResultSet = ps.executeQuery()
+      if (!rsGeo.next()) throw new Exception("No se creó Files_geojson")
+      val geojsonId = rsGeo.getLong("file_ptr_id")
+      rsGeo.close()
+      ps.close()
+
+      // 3) Por cada equipo, INSERT acceso
+      val sqlAcc =
+        """
+          |WITH dr AS (
+          |  INSERT INTO public."digital_resource"
+          |    (creator_id, created_at, deleted)
+          |  VALUES (?, NOW(), false)
+          |  RETURNING id
+          |)
+          |INSERT INTO public."access"
+          |  (digitalresource_ptr_id, accessed_file_id, accessing_team_id)
+          |VALUES (
+          |  (SELECT id FROM dr),
+          |  ?,
+          |  (SELECT digitalresource_ptr_id FROM public."team" WHERE name = ?)
+          |)
+        """.stripMargin
+
+      teamsList.foreach { tv =>
+        ps = conn.prepareStatement(sqlAcc)
+        ps.setInt(1, 16)                       // creator_id
+        ps.setLong(2, geojsonId)             // accessed_file_id
+        ps.setString(3, tv.value)            // team name
+        ps.executeUpdate()
+        ps.close()
+      }
+
+      // 4) Obtener project_id
+      val sqlProj = """SELECT digitalresource_ptr_id FROM public."project" WHERE name = ?"""
+      ps = conn.prepareStatement(sqlProj)
+      ps.setString(1, project)
+      val rsProj = ps.executeQuery()
+      if (!rsProj.next()) throw new Exception("Proyecto no encontrado")
+      val projectId = rsProj.getLong("digitalresource_ptr_id")
+      rsProj.close()
+      ps.close()
+
+      // 5) INSERT location (diferente si es root o subcarpeta)
+      if (location == project) {
+        val sqlLocRoot =
+          """
+            |WITH dr AS (
+            |  INSERT INTO public."digital_resource"
+            |    (creator_id, created_at, deleted)
+            |  VALUES (?, NOW(), false)
+            |  RETURNING id
+            |)
+            |INSERT INTO public."location"
+            |  (digitalresource_ptr_id, path, located_folder_id, located_project_id, located_file_id)
+            |VALUES ((SELECT id FROM dr), '', NULL, ?, ?)
+          """.stripMargin
+        ps = conn.prepareStatement(sqlLocRoot)
+        ps.setInt(1, 16)
+        ps.setLong(2, projectId)
+        ps.setLong(3, geojsonId)
+        ps.executeUpdate()
+        ps.close()
+      } else {
+        // crea carpeta + location
+        val sqlCreateFolder =
+          """INSERT INTO public."Files_folder"(name,parent_id,path)
+            |VALUES(?,NULL,?) RETURNING id""".stripMargin
+        ps = conn.prepareStatement(sqlCreateFolder)
+        ps.setString(1, location)
+        ps.setString(2, location)
+        val rsFold = ps.executeQuery()
+        if (!rsFold.next()) throw new Exception("No se creó carpeta")
+        val folderId = rsFold.getLong("id")
+        rsFold.close()
+        ps.close()
+
+        val sqlLoc =
+          """
+            |INSERT INTO public."Files_location"
+            |  (digitalresource_ptr_id, path, located_folder_id, located_project_id, located_file_id)
+            |VALUES (?, ?, ?, ?, ?)
+          """.stripMargin
+        ps = conn.prepareStatement(sqlLoc)
+        ps.setInt(1, 1)
+        ps.setString(2, location)
+        ps.setLong(3, folderId)
+        ps.setLong(4, projectId)
+        ps.setLong(5, geojsonId)
+        ps.executeUpdate()
+        ps.close()
+      }
+
+      // 6) Categorías
+      val sqlCat =
+        """
+          |WITH dr AS (
+          |  INSERT INTO public."Files_digitalresource"
+          |    (creator_id, created_at, deleted)
+          |  VALUES (?, NOW(), false)
+          |  RETURNING id
+          |)
+          |INSERT INTO public."Files_access"
+          |  (digitalresource_ptr_id, accessed_file_id, accessing_team_id)
+          |SELECT dr.id, ?, c.id
+          |FROM dr
+          |JOIN public."Files_category" c ON c.label = ?
+        """.stripMargin
+
+      categoriesList.foreach { cv =>
+        ps = conn.prepareStatement(sqlCat)
+        ps.setInt(1, 1)
+        ps.setLong(2, geojsonId)
+        ps.setString(3, cv.value)
+        ps.executeUpdate()
+        ps.close()
+      }
+
+      conn.commit()
+      Response("""{"status":"success"}""", 200)
+
+    } catch {
+      case e: Exception =>
+        if (conn != null) conn.rollback()
+        Response(s"""{"error":"${e.getMessage}"}""", 500)
+    } finally {
+      if (ps   != null) ps.close()
+      if (conn != null) conn.close()
     }
   }
 

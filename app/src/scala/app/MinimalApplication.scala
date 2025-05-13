@@ -20,8 +20,8 @@ object MinimalApplication extends cask.MainRoutes{
   def initDb(): Unit = {
     try {
       val url_db = "jdbc:postgresql://localhost:5432/LocalGeoInventory_Cask"
-      val user = "dbuser"
-      val password = "irtapass"
+      val user = "xxxx"
+      val password = "xxxxxx"
 
       val loader = getClass.getClassLoader
       val url = loader.getResource("sql/init_db.sql")
