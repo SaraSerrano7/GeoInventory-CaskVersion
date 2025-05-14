@@ -14,7 +14,7 @@ END IF;
 CREATE TYPE geojson_type_choices AS ENUM ('Feature','FeatureCollection');
 END IF;
   IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'geojson_attr_type_choices') THEN
-CREATE TYPE geojson_attr_type_choices AS ENUM ('int','float','str','bool');
+CREATE TYPE geojson_attr_type_choices AS ENUM ('int','float','str','bool', 'NoneType');
 END IF;
 END$$;
 
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS digital_resource (
 -- 2) Equipos (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS team (
-                                    digital_resource_ptr_id INTEGER PRIMARY KEY
+                                    digitalresource_ptr_id INTEGER PRIMARY KEY
                                     REFERENCES digital_resource(id) ON DELETE CASCADE,
     name VARCHAR(50) NOT NULL
     );
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS team (
 -- 3) Roles (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS role (
-                                    digital_resource_ptr_id INTEGER PRIMARY KEY
+                                    digitalresource_ptr_id INTEGER PRIMARY KEY
                                     REFERENCES digital_resource(id) ON DELETE CASCADE,
     role_name roles_choices NOT NULL
     );
@@ -69,14 +69,14 @@ CREATE TABLE IF NOT EXISTS role (
 -- 4) Membership (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS membership (
-                                          digital_resource_ptr_id INTEGER PRIMARY KEY
+                                          digitalresource_ptr_id INTEGER PRIMARY KEY
                                           REFERENCES digital_resource(id) ON DELETE CASCADE,
     member_id INTEGER NOT NULL
     REFERENCES auth_user(id) ON DELETE CASCADE,
     user_team_id INTEGER
-    REFERENCES team(digital_resource_ptr_id) ON DELETE SET NULL,
+    REFERENCES team(digitalresource_ptr_id) ON DELETE SET NULL,
     user_role_id INTEGER NOT NULL
-    REFERENCES role(digital_resource_ptr_id) ON DELETE SET DEFAULT
+    REFERENCES role(digitalresource_ptr_id) ON DELETE SET DEFAULT
     );
 
 
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS membership (
 -- 5) Proyectos (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS project (
-                                       digital_resource_ptr_id INTEGER PRIMARY KEY
+                                       digitalresource_ptr_id INTEGER PRIMARY KEY
                                        REFERENCES digital_resource(id) ON DELETE CASCADE,
     name VARCHAR(200) NOT NULL,
     active BOOLEAN NOT NULL DEFAULT TRUE,
@@ -96,12 +96,12 @@ CREATE TABLE IF NOT EXISTS project (
 -- 6) Asignaciones de equipos a proyectos (hereda)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS assignations (
-                                            digital_resource_ptr_id INTEGER PRIMARY KEY
+                                            digitalresource_ptr_id INTEGER PRIMARY KEY
                                             REFERENCES digital_resource(id) ON DELETE CASCADE,
     assignated_project_id INTEGER
-    REFERENCES project(digital_resource_ptr_id) ON DELETE SET NULL,
+    REFERENCES project(digitalresource_ptr_id) ON DELETE SET NULL,
     assignated_team_id INTEGER
-    REFERENCES team(digital_resource_ptr_id) ON DELETE SET NULL,
+    REFERENCES team(digitalresource_ptr_id) ON DELETE SET NULL,
     assignation_date TIMESTAMPTZ NOT NULL DEFAULT now()
     );
 
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS assignations (
 -- 7) Archivos (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS file (
-                                    digital_resource_ptr_id INTEGER PRIMARY KEY
+                                    digitalresource_ptr_id INTEGER PRIMARY KEY
                                     REFERENCES digital_resource(id) ON DELETE CASCADE,
     name VARCHAR(200) NOT NULL
     );
@@ -120,12 +120,12 @@ CREATE TABLE IF NOT EXISTS file (
 -- 8) Accesos de equipos a archivos (hereda)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS access (
-                                      digital_resource_ptr_id INTEGER PRIMARY KEY
+                                      digitalresource_ptr_id INTEGER PRIMARY KEY
                                       REFERENCES digital_resource(id) ON DELETE CASCADE,
     accessed_file_id INTEGER
-    REFERENCES file(digital_resource_ptr_id) ON DELETE SET NULL,
+    REFERENCES file(digitalresource_ptr_id) ON DELETE SET NULL,
     accessing_team_id INTEGER
-    REFERENCES team(digital_resource_ptr_id) ON DELETE SET NULL
+    REFERENCES team(digitalresource_ptr_id) ON DELETE SET NULL
     );
 
 
@@ -133,11 +133,11 @@ CREATE TABLE IF NOT EXISTS access (
 -- 9) Carpetas (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS folder (
-                                      digital_resource_ptr_id INTEGER PRIMARY KEY
+                                      digitalresource_ptr_id INTEGER PRIMARY KEY
                                       REFERENCES digital_resource(id) ON DELETE CASCADE,
     name VARCHAR(200) NOT NULL,
     parent_id INTEGER
-    REFERENCES folder(digital_resource_ptr_id) ON DELETE SET NULL,
+    REFERENCES folder(digitalresource_ptr_id) ON DELETE SET NULL,
     path VARCHAR(255) NOT NULL
     );
 
@@ -146,14 +146,14 @@ CREATE TABLE IF NOT EXISTS folder (
 -- 10) Ubicaciones (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS location (
-                                        digital_resource_ptr_id INTEGER PRIMARY KEY
+                                        digitalresource_ptr_id INTEGER PRIMARY KEY
                                         REFERENCES digital_resource(id) ON DELETE CASCADE,
     located_file_id INTEGER
-    REFERENCES file(digital_resource_ptr_id) ON DELETE SET NULL,
+    REFERENCES file(digitalresource_ptr_id) ON DELETE SET NULL,
     located_project_id INTEGER
-    REFERENCES project(digital_resource_ptr_id) ON DELETE SET NULL,
+    REFERENCES project(digitalresource_ptr_id) ON DELETE SET NULL,
     located_folder_id INTEGER
-    REFERENCES folder(digital_resource_ptr_id) ON DELETE SET NULL,
+    REFERENCES folder(digitalresource_ptr_id) ON DELETE SET NULL,
     path VARCHAR(1024) NOT NULL
     );
 
@@ -162,7 +162,7 @@ CREATE TABLE IF NOT EXISTS location (
 -- 11) Categorías (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS category (
-                                        digital_resource_ptr_id INTEGER PRIMARY KEY
+                                        digitalresource_ptr_id INTEGER PRIMARY KEY
                                         REFERENCES digital_resource(id) ON DELETE CASCADE,
     label VARCHAR(50) NOT NULL UNIQUE
     );
@@ -172,12 +172,12 @@ CREATE TABLE IF NOT EXISTS category (
 -- 12) Clasificaciones (hereda de Digital_Resource)
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS classification (
-                                              digital_resource_ptr_id INTEGER PRIMARY KEY
+                                              digitalresource_ptr_id INTEGER PRIMARY KEY
                                               REFERENCES digital_resource(id) ON DELETE CASCADE,
     related_file_id INTEGER
-    REFERENCES file(digital_resource_ptr_id) ON DELETE SET NULL,
+    REFERENCES file(digitalresource_ptr_id) ON DELETE SET NULL,
     category_name_id INTEGER
-    REFERENCES category(digital_resource_ptr_id) ON DELETE SET NULL
+    REFERENCES category(digitalresource_ptr_id) ON DELETE SET NULL
     );
 
 
@@ -186,7 +186,7 @@ CREATE TABLE IF NOT EXISTS classification (
 -- --------------------------------------------------
 CREATE TABLE IF NOT EXISTS geojson (
                                        file_ptr_id INTEGER PRIMARY KEY
-                                       REFERENCES file(digital_resource_ptr_id) ON DELETE CASCADE,
+                                       REFERENCES file(digitalresource_ptr_id) ON DELETE CASCADE,
     content_type geojson_type_choices NOT NULL
     );
 

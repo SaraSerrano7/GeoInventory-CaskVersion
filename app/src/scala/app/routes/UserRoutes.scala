@@ -277,7 +277,7 @@ class UserRoutes extends cask.MainRoutes {
       val sqlCat =
         """
           |WITH dr AS (
-          |  INSERT INTO public."Files_digitalresource"
+          |  INSERT INTO public."digitalresource"
           |    (creator_id, created_at, deleted)
           |  VALUES (?, NOW(), false)
           |  RETURNING id
@@ -358,7 +358,7 @@ class UserRoutes extends cask.MainRoutes {
       }
 //      psFeature.executeBatch()
       val countsGeom: Array[Int] = psFeature.executeBatch()
-      println(s"[DEBUG] Insert geom: expected=${featureRows.size}, actualCounts=${countsGeom.mkString(",")}")
+//      println(s"[DEBUG] Insert geom: expected=${featureRows.size}, actualCounts=${countsGeom.mkString(",")}")
       // Comprueba que no haya -3 (STATEMENT_SUCCESS_NO_INFO) si usas RETURN_GENERATED_KEYS
       if (countsGeom.length != featureRows.size) {
         throw new Exception(s"Número de geometrías insertadas (${countsGeom.length}) distinto a esperado (${featureRows.size})")
@@ -369,7 +369,7 @@ class UserRoutes extends cask.MainRoutes {
       val featureIds = Iterator.continually(rsFeatKeys).takeWhile(_.next()).map(_.getLong(1)).toList
       rsFeatKeys.close()
       psFeature.close()
-      println(s"[DEBUG] featureIds generated: $featureIds")
+//      println(s"[DEBUG] featureIds generated: $featureIds")
       if (featureIds.size != featureRows.size) {
         throw new Exception(s"Número de featureIds (${featureIds.size}) distinto a geometrías (${featureRows.size})")
       }
@@ -381,6 +381,8 @@ class UserRoutes extends cask.MainRoutes {
           case (k, v) =>
             val tpe = v match {
               case ujson.Str(_) =>
+                "str"
+              case ujson.Null =>
                 "str"
               case ujson.Bool(_) =>
                 "bool"
@@ -417,7 +419,7 @@ class UserRoutes extends cask.MainRoutes {
         psEnum.close()
         buf.toSet
       }
-      println(s"[DEBUG] Allowed attribute types: $allowedTypes")
+//      println(s"[DEBUG] Allowed attribute types: $allowedTypes")
 
 
 
@@ -429,7 +431,7 @@ class UserRoutes extends cask.MainRoutes {
       }
 //      psAttr.executeBatch()
       val countsAttr: Array[Int] = psAttr.executeBatch()
-      println(s"[DEBUG] Insert attrs: expected=${attributeRows.size}, actualCounts=${countsAttr.mkString(",")}")
+//      println(s"[DEBUG] Insert attrs: expected=${attributeRows.size}, actualCounts=${countsAttr.mkString(",")}")
       if (countsAttr.length != attributeRows.size) {
         throw new Exception(s"Número de atributos insertados (${countsAttr.length}) distinto a esperado (${attributeRows.size})")
       }
@@ -443,7 +445,7 @@ class UserRoutes extends cask.MainRoutes {
       }
       rsAttrKeys.close()
       psAttr.close()
-      println(s"[DEBUG] attributes map: $attributes")
+//      println(s"[DEBUG] attributes map: $attributes")
 
 
       // 5) Preparar e insertar las relaciones Feature ↔ Atributo
@@ -461,6 +463,8 @@ class UserRoutes extends cask.MainRoutes {
             val tpe = v match {
               case ujson.Str(_) =>
                 "str"
+              case ujson.Null =>
+                "str"
               case ujson.Bool(_) =>
                 "bool"
               case ujson.Num(n) if n.isValidInt =>
@@ -473,16 +477,16 @@ class UserRoutes extends cask.MainRoutes {
             val attrId = attributes((k, tpe))
             psFP.setLong(1, featId)
             psFP.setLong(2, attrId)
-            psFP.setString(3, v.toString())
+            psFP.setString(3, if (v == ujson.Null) "null" else v.toString())
             psFP.addBatch()
           }
         }
       }
 //      psFP.executeBatch()
       val countsRel: Array[Int] = psFP.executeBatch()
-      println(
-        s"[DEBUG] Insert relations: expected=${features.size}*propsPerFeature, counts=${countsRel.mkString(",")}"
-      )
+//      println(
+//        s"[DEBUG] Insert relations: expected=${features.size}*propsPerFeature, counts=${countsRel.mkString(",")}"
+//      )
       if (countsRel.exists(_ <= 0)) {
         throw new Exception(s"Alguna relación Feature–Atributo no se insertó correctamente: ${countsRel.mkString(",")}")
       }

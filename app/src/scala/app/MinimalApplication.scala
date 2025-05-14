@@ -19,9 +19,14 @@ object MinimalApplication extends cask.MainRoutes{
 
   def initDb(): Unit = {
     try {
-      val url_db = "jdbc:postgresql://localhost:5432/LocalGeoInventory_Cask"
-      val user = "xxxx"
-      val password = "xxxxxx"
+//      val url_db = "jdbc:postgresql://localhost:5432/LocalGeoInventory_Cask"
+//      val user = "xxxxx"
+//      val password = "xxxxxx"
+
+      val url_db  = sys.env.getOrElse("JDBC_URL", "jdbc:postgresql://localhost:5432/test_LocalGeoInventory_Cask")
+      val user = sys.env.getOrElse("JDBC_USER", "xxxxx")
+      val password = sys.env.getOrElse("JDBC_PASS", "xxxxx")
+
 
       val loader = getClass.getClassLoader
       val url = loader.getResource("sql/init_db.sql")
@@ -33,7 +38,7 @@ object MinimalApplication extends cask.MainRoutes{
       } else {
         val source = scala.io.Source.fromURL(url)
         val content = source.getLines().mkString("\n")
-        println("Contenido del archivo:\n" + content)
+//        println("Contenido del archivo:\n" + content)
         source.close()
       }
 
