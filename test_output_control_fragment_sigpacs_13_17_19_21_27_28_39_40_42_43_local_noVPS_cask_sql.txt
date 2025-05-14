@@ -3,76 +3,121 @@
 [111] [initDb] Ejecutando script completo…
 [111] [initDb] Tablas creadas o ya existían.
 [111] 
-[111] 🕒 Hora: 11:45:03 - Preparando DB
+[111] 🕒 Hora: 20:29:10 - Preparando DB
 [111] URL de sql/init_db.sql: file:/home/usuari/IdeaProjects/CaskExample/app/src/scala/resources/sql/init_db.sql
 [111] [initDb] Ejecutando script completo…
 [111] [initDb] Tablas creadas o ya existían.
 [111] 
-[111] 🕒 Hora: 11:45:03 - DB lista
-[111] 📊 Registros: geojson_feature = 916586, geojson_feature_properties = 22461665
+[111] 🕒 Hora: 20:29:10 - DB lista
+[111] 📊 Registros: geojson_feature = 1157930, geojson_feature_properties = 28495219
 [111] Matched FeatureCollection
-[111] SIGPAC_17_Garraf.geojson: 16763ms | Status: 200
+[111] SIGPAC_17_Garraf.geojson: 16235ms | Status: 200
 [111] 
-[111] 🕒 Hora: 11:45:20 - Fichero procesado SIGPAC_17_Garraf.geojson (16763ms)
-[111] 📊 Registros: geojson_feature = 932237, geojson_feature_properties = 22852940
+[111] 🕒 Hora: 20:29:27 - Fichero procesado SIGPAC_17_Garraf.geojson (16235ms)
+[111] 📊 Registros: geojson_feature = 1173581, geojson_feature_properties = 28886494
 [111] 
-[111] Tiempo promedio: 16763 ms
-[111] 📊 Registros: geojson_feature = 932237, geojson_feature_properties = 22852940
+[111] Tiempo promedio: 16235 ms
+[111] 📊 Registros: geojson_feature = 1173581, geojson_feature_properties = 28886494
+[111] Matched FeatureCollection
+[111] SIGPAC_39_VallAran.geojson: 24600ms | Status: 200
+[111] 
+[111] 🕒 Hora: 20:29:53 - Fichero procesado SIGPAC_39_VallAran.geojson (24600ms)
+[111] 📊 Registros: geojson_feature = 1200132, geojson_feature_properties = 29550269
+[111] 
+[111] Tiempo promedio: 20417 ms
+[111] 📊 Registros: geojson_feature = 1200132, geojson_feature_properties = 29550269
 [111] Matched Feature
-[111] FeaturePoligon.geojson: 44ms | Status: 200
+[111] FeaturePoligon.geojson: 66ms | Status: 200
 [111] 
-[111] 🕒 Hora: 11:45:21 - Fichero procesado FeaturePoligon.geojson (44ms)
-[111] 📊 Registros: geojson_feature = 932238, geojson_feature_properties = 22852942
+[111] 🕒 Hora: 20:29:54 - Fichero procesado FeaturePoligon.geojson (66ms)
+[111] 📊 Registros: geojson_feature = 1200133, geojson_feature_properties = 29550271
 [111] 
-[111] Tiempo promedio: 8403 ms
-[111] 📊 Registros: geojson_feature = 932238, geojson_feature_properties = 22852942
+[111] Tiempo promedio: 13633 ms
+[111] 📊 Registros: geojson_feature = 1200133, geojson_feature_properties = 29550271
 [111] Matched FeatureCollection
-[111] SIGPAC_13_Barcelones_fragment.geojson: 73ms | Status: 200
+[111] SIGPAC_13_Barcelones_fragment.geojson: 69ms | Status: 200
 [111] 
-[111] 🕒 Hora: 11:45:22 - Fichero procesado SIGPAC_13_Barcelones_fragment.geojson (73ms)
-[111] 📊 Registros: geojson_feature = 932245, geojson_feature_properties = 22853117
+[111] 🕒 Hora: 20:29:56 - Fichero procesado SIGPAC_13_Barcelones_fragment.geojson (69ms)
+[111] 📊 Registros: geojson_feature = 1200140, geojson_feature_properties = 29550446
 [111] 
-[111] Tiempo promedio: 5626 ms
-[111] 📊 Registros: geojson_feature = 932245, geojson_feature_properties = 22853117
+[111] Tiempo promedio: 10242 ms
+[111] 📊 Registros: geojson_feature = 1200140, geojson_feature_properties = 29550446
 [111] Matched FeatureCollection
-[111] SIGPAC_43_Llucanes.geojson: 22886ms | Status: 200
+[111] SIGPAC_28_PlaEstany.geojson: 31694ms | Status: 200
 [111] 
-[111] 🕒 Hora: 11:45:46 - Fichero procesado SIGPAC_43_Llucanes.geojson (22886ms)
-[111] 📊 Registros: geojson_feature = 954082, geojson_feature_properties = 23399042
+[111] 🕒 Hora: 20:30:29 - Fichero procesado SIGPAC_28_PlaEstany.geojson (31694ms)
+[111] 📊 Registros: geojson_feature = 1233242, geojson_feature_properties = 30377996
 [111] 
-[111] Tiempo promedio: 9941 ms
-[111] 📊 Registros: geojson_feature = 954082, geojson_feature_properties = 23399042
+[111] Tiempo promedio: 14532 ms
+[111] 📊 Registros: geojson_feature = 1233242, geojson_feature_properties = 30377996
 [111] Matched FeatureCollection
-[111] SIGPAC_21_Maresme.geojson: 48846ms | Status: 200
+[111] SIGPAC_27_PlaUrgell.geojson: 41373ms | Status: 200
 [111] 
-[111] 🕒 Hora: 11:46:36 - Fichero procesado SIGPAC_21_Maresme.geojson (48846ms)
-[111] 📊 Registros: geojson_feature = 1007068, geojson_feature_properties = 24723692
+[111] 🕒 Hora: 20:31:11 - Fichero procesado SIGPAC_27_PlaUrgell.geojson (41373ms)
+[111] 📊 Registros: geojson_feature = 1285413, geojson_feature_properties = 31682271
 [111] 
-[111] Tiempo promedio: 17722 ms
-[111] 📊 Registros: geojson_feature = 1007068, geojson_feature_properties = 24723692
+[111] Tiempo promedio: 19006 ms
+[111] 📊 Registros: geojson_feature = 1285413, geojson_feature_properties = 31682271
 [111] Matched FeatureCollection
-[111] SIGPAC_13_Barcelones.geojson: 4605ms | Status: 200
+[111] SIGPAC_43_Llucanes.geojson: 21835ms | Status: 200
 [111] 
-[111] 🕒 Hora: 11:46:42 - Fichero procesado SIGPAC_13_Barcelones.geojson (4605ms)
-[111] 📊 Registros: geojson_feature = 1011572, geojson_feature_properties = 24836292
+[111] 🕒 Hora: 20:31:34 - Fichero procesado SIGPAC_43_Llucanes.geojson (21835ms)
+[111] 📊 Registros: geojson_feature = 1307250, geojson_feature_properties = 32228196
 [111] 
-[111] Tiempo promedio: 15536 ms
-[111] 📊 Registros: geojson_feature = 1011572, geojson_feature_properties = 24836292
+[111] Tiempo promedio: 19410 ms
+[111] 📊 Registros: geojson_feature = 1307250, geojson_feature_properties = 32228196
 [111] Matched FeatureCollection
-[111] SIGPAC_42_Moianes.geojson: 28097ms | Status: 200
+[111] SIGPAC_19_Garrotxa.geojson: 48612ms | Status: 200
 [111] 
-[111] 🕒 Hora: 11:47:11 - Fichero procesado SIGPAC_42_Moianes.geojson (28097ms)
-[111] 📊 Registros: geojson_feature = 1037258, geojson_feature_properties = 25478442
+[111] 🕒 Hora: 20:32:25 - Fichero procesado SIGPAC_19_Garrotxa.geojson (48612ms)
+[111] 📊 Registros: geojson_feature = 1355246, geojson_feature_properties = 33428096
 [111] 
-[111] Tiempo promedio: 17330 ms
+[111] Tiempo promedio: 23060 ms
+[111] 📊 Registros: geojson_feature = 1355246, geojson_feature_properties = 33428096
+[111] Matched FeatureCollection
+[111] SIGPAC_40_VallesOccidental.geojson: 45711ms | Status: 200
+[111] 
+[111] 🕒 Hora: 20:33:12 - Fichero procesado SIGPAC_40_VallesOccidental.geojson (45711ms)
+[111] 📊 Registros: geojson_feature = 1400540, geojson_feature_properties = 34560446
+[111] 
+[111] Tiempo promedio: 25577 ms
+[111] 📊 Registros: geojson_feature = 1400540, geojson_feature_properties = 34560446
+[111] Matched FeatureCollection
+[111] SIGPAC_21_Maresme.geojson: 49036ms | Status: 200
+[111] 
+[111] 🕒 Hora: 20:34:02 - Fichero procesado SIGPAC_21_Maresme.geojson (49036ms)
+[111] 📊 Registros: geojson_feature = 1453526, geojson_feature_properties = 35885096
+[111] 
+[111] Tiempo promedio: 27923 ms
+[111] 📊 Registros: geojson_feature = 1453526, geojson_feature_properties = 35885096
+[111] Matched FeatureCollection
+[111] SIGPAC_13_Barcelones.geojson: 4815ms | Status: 200
+[111] 
+[111] 🕒 Hora: 20:34:09 - Fichero procesado SIGPAC_13_Barcelones.geojson (4815ms)
+[111] 📊 Registros: geojson_feature = 1458030, geojson_feature_properties = 35997696
+[111] 
+[111] Tiempo promedio: 25822 ms
+[111] 📊 Registros: geojson_feature = 1458030, geojson_feature_properties = 35997696
+[111] Matched FeatureCollection
+[111] SIGPAC_42_Moianes.geojson: 29330ms | Status: 200
+[111] 
+[111] 🕒 Hora: 20:34:39 - Fichero procesado SIGPAC_42_Moianes.geojson (29330ms)
+[111] 📊 Registros: geojson_feature = 1483716, geojson_feature_properties = 36639846
+[111] 
+[111] Tiempo promedio: 26114 ms
 [111] 
 [111] Resumen:
-[111] SIGPAC_17_Garraf.geojson - 16763 ms
-[111] FeaturePoligon.geojson - 44 ms
-[111] SIGPAC_13_Barcelones_fragment.geojson - 73 ms
-[111] SIGPAC_43_Llucanes.geojson - 22886 ms
-[111] SIGPAC_21_Maresme.geojson - 48846 ms
-[111] SIGPAC_13_Barcelones.geojson - 4605 ms
-[111] SIGPAC_42_Moianes.geojson - 28097 ms
-[111] [32m+[39m app.ExampleTests.UploadGeoJSONFilesPerformance [2m129356ms[0m  
+[111] SIGPAC_17_Garraf.geojson - 16235 ms
+[111] SIGPAC_39_VallAran.geojson - 24600 ms
+[111] FeaturePoligon.geojson - 66 ms
+[111] SIGPAC_13_Barcelones_fragment.geojson - 69 ms
+[111] SIGPAC_28_PlaEstany.geojson - 31694 ms
+[111] SIGPAC_27_PlaUrgell.geojson - 41373 ms
+[111] SIGPAC_43_Llucanes.geojson - 21835 ms
+[111] SIGPAC_19_Garrotxa.geojson - 48612 ms
+[111] SIGPAC_40_VallesOccidental.geojson - 45711 ms
+[111] SIGPAC_21_Maresme.geojson - 49036 ms
+[111] SIGPAC_13_Barcelones.geojson - 4815 ms
+[111] SIGPAC_42_Moianes.geojson - 29330 ms
+[111] [32m+[39m app.ExampleTests.UploadGeoJSONFilesPerformance [2m330527ms[0m  
 [111] Tests: 1, Passed: 1, Failed: 0
