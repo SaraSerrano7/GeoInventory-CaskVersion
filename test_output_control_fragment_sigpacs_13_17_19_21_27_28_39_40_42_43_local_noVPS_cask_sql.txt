@@ -1,0 +1,78 @@
+[111] -------------------------------- Running Tests --------------------------------
+[111] URL de sql/init_db.sql: file:/home/usuari/IdeaProjects/CaskExample/app/src/scala/resources/sql/init_db.sql
+[111] [initDb] Ejecutando script completo…
+[111] [initDb] Tablas creadas o ya existían.
+[111] 
+[111] 🕒 Hora: 11:45:03 - Preparando DB
+[111] URL de sql/init_db.sql: file:/home/usuari/IdeaProjects/CaskExample/app/src/scala/resources/sql/init_db.sql
+[111] [initDb] Ejecutando script completo…
+[111] [initDb] Tablas creadas o ya existían.
+[111] 
+[111] 🕒 Hora: 11:45:03 - DB lista
+[111] 📊 Registros: geojson_feature = 916586, geojson_feature_properties = 22461665
+[111] Matched FeatureCollection
+[111] SIGPAC_17_Garraf.geojson: 16763ms | Status: 200
+[111] 
+[111] 🕒 Hora: 11:45:20 - Fichero procesado SIGPAC_17_Garraf.geojson (16763ms)
+[111] 📊 Registros: geojson_feature = 932237, geojson_feature_properties = 22852940
+[111] 
+[111] Tiempo promedio: 16763 ms
+[111] 📊 Registros: geojson_feature = 932237, geojson_feature_properties = 22852940
+[111] Matched Feature
+[111] FeaturePoligon.geojson: 44ms | Status: 200
+[111] 
+[111] 🕒 Hora: 11:45:21 - Fichero procesado FeaturePoligon.geojson (44ms)
+[111] 📊 Registros: geojson_feature = 932238, geojson_feature_properties = 22852942
+[111] 
+[111] Tiempo promedio: 8403 ms
+[111] 📊 Registros: geojson_feature = 932238, geojson_feature_properties = 22852942
+[111] Matched FeatureCollection
+[111] SIGPAC_13_Barcelones_fragment.geojson: 73ms | Status: 200
+[111] 
+[111] 🕒 Hora: 11:45:22 - Fichero procesado SIGPAC_13_Barcelones_fragment.geojson (73ms)
+[111] 📊 Registros: geojson_feature = 932245, geojson_feature_properties = 22853117
+[111] 
+[111] Tiempo promedio: 5626 ms
+[111] 📊 Registros: geojson_feature = 932245, geojson_feature_properties = 22853117
+[111] Matched FeatureCollection
+[111] SIGPAC_43_Llucanes.geojson: 22886ms | Status: 200
+[111] 
+[111] 🕒 Hora: 11:45:46 - Fichero procesado SIGPAC_43_Llucanes.geojson (22886ms)
+[111] 📊 Registros: geojson_feature = 954082, geojson_feature_properties = 23399042
+[111] 
+[111] Tiempo promedio: 9941 ms
+[111] 📊 Registros: geojson_feature = 954082, geojson_feature_properties = 23399042
+[111] Matched FeatureCollection
+[111] SIGPAC_21_Maresme.geojson: 48846ms | Status: 200
+[111] 
+[111] 🕒 Hora: 11:46:36 - Fichero procesado SIGPAC_21_Maresme.geojson (48846ms)
+[111] 📊 Registros: geojson_feature = 1007068, geojson_feature_properties = 24723692
+[111] 
+[111] Tiempo promedio: 17722 ms
+[111] 📊 Registros: geojson_feature = 1007068, geojson_feature_properties = 24723692
+[111] Matched FeatureCollection
+[111] SIGPAC_13_Barcelones.geojson: 4605ms | Status: 200
+[111] 
+[111] 🕒 Hora: 11:46:42 - Fichero procesado SIGPAC_13_Barcelones.geojson (4605ms)
+[111] 📊 Registros: geojson_feature = 1011572, geojson_feature_properties = 24836292
+[111] 
+[111] Tiempo promedio: 15536 ms
+[111] 📊 Registros: geojson_feature = 1011572, geojson_feature_properties = 24836292
+[111] Matched FeatureCollection
+[111] SIGPAC_42_Moianes.geojson: 28097ms | Status: 200
+[111] 
+[111] 🕒 Hora: 11:47:11 - Fichero procesado SIGPAC_42_Moianes.geojson (28097ms)
+[111] 📊 Registros: geojson_feature = 1037258, geojson_feature_properties = 25478442
+[111] 
+[111] Tiempo promedio: 17330 ms
+[111] 
+[111] Resumen:
+[111] SIGPAC_17_Garraf.geojson - 16763 ms
+[111] FeaturePoligon.geojson - 44 ms
+[111] SIGPAC_13_Barcelones_fragment.geojson - 73 ms
+[111] SIGPAC_43_Llucanes.geojson - 22886 ms
+[111] SIGPAC_21_Maresme.geojson - 48846 ms
+[111] SIGPAC_13_Barcelones.geojson - 4605 ms
+[111] SIGPAC_42_Moianes.geojson - 28097 ms
+[111] [32m+[39m app.ExampleTests.UploadGeoJSONFilesPerformance [2m129356ms[0m  
+[111] Tests: 1, Passed: 1, Failed: 0

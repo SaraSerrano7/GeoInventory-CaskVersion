@@ -1,0 +1,42 @@
+[111] -------------------------------- Running Tests --------------------------------
+[111] URL de sql/init_db.sql: file:/home/usuari/IdeaProjects/CaskExample/app/src/scala/resources/sql/init_db.sql
+[111] [initDb] Ejecutando script completo…
+[111] [initDb] Tablas creadas o ya existían.
+[111] 
+[111] 🕒 Hora: 10:43:29 - Preparando DB
+[111] URL de sql/init_db.sql: file:/home/usuari/IdeaProjects/CaskExample/app/src/scala/resources/sql/init_db.sql
+[111] [initDb] Ejecutando script completo…
+[111] [initDb] Tablas creadas o ya existían.
+[111] 
+[111] 🕒 Hora: 10:43:29 - DB lista
+[111] 📊 Registros: geojson_feature = 54225, geojson_feature_properties = 902847
+[111] Matched Feature
+[111] FeaturePoligon.geojson: 317ms | Status: 200
+[111] 
+[111] 🕒 Hora: 10:43:29 - Fichero procesado FeaturePoligon.geojson (317ms)
+[111] 📊 Registros: geojson_feature = 54226, geojson_feature_properties = 902849
+[111] 
+[111] Tiempo promedio: 317 ms
+[111] 📊 Registros: geojson_feature = 54226, geojson_feature_properties = 902849
+[111] Matched FeatureCollection
+[111] SIGPAC_13_Barcelones_fragment.geojson: 121ms | Status: 200
+[111] 
+[111] 🕒 Hora: 10:43:29 - Fichero procesado SIGPAC_13_Barcelones_fragment.geojson (121ms)
+[111] 📊 Registros: geojson_feature = 54233, geojson_feature_properties = 903024
+[111] 
+[111] Tiempo promedio: 219 ms
+[111] 📊 Registros: geojson_feature = 54233, geojson_feature_properties = 903024
+[111] Matched FeatureCollection
+[111] SIGPAC_13_Barcelones.geojson: 5678ms | Status: 200
+[111] 
+[111] 🕒 Hora: 10:43:35 - Fichero procesado SIGPAC_13_Barcelones.geojson (5678ms)
+[111] 📊 Registros: geojson_feature = 58737, geojson_feature_properties = 1015624
+[111] 
+[111] Tiempo promedio: 2038 ms
+[111] 
+[111] Resumen:
+[111] FeaturePoligon.geojson - 317 ms
+[111] SIGPAC_13_Barcelones_fragment.geojson - 121 ms
+[111] SIGPAC_13_Barcelones.geojson - 5678 ms
+[111] [32m+[39m app.ExampleTests.UploadGeoJSONFilesPerformance [2m7171ms[0m  
+[111] Tests: 1, Passed: 1, Failed: 0
