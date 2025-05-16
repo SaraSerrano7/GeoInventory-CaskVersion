@@ -2,15 +2,14 @@ package app
 import io.undertow.Undertow
 import utest._
 
+import java.io.FileInputStream
 import java.sql.DriverManager
 import java.nio.file.Files
 import java.nio.file.Paths
 import scala.app.MinimalApplication
 import scala.app.MinimalApplication.getClass
 import scala.io.Source
-
 import scala.sys.process._
-
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 import java.sql.DriverManager
@@ -44,7 +43,7 @@ object ExampleTests extends TestSuite{
 
   def dropAllTables(): Unit = {
     val dropCmd =
-      """psql -U dbuser -d test_LocalGeoInventory_Cask -h localhost -c "DO $$ DECLARE r RECORD; BEGIN FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'public') LOOP EXECUTE 'DROP TABLE IF EXISTS public.' || quote_ident(r.tablename) || ' CASCADE'; END LOOP; END $$;" """
+      """psql -U xxxx -d test_LocalGeoInventory_Cask -h localhost -c "DO $$ DECLARE r RECORD; BEGIN FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'public') LOOP EXECUTE 'DROP TABLE IF EXISTS public.' || quote_ident(r.tablename) || ' CASCADE'; END LOOP; END $$;" """
     val result = dropCmd.!
     assert(result == 0)
   }
@@ -148,6 +147,11 @@ object ExampleTests extends TestSuite{
         val fileName = file.getName
         val start = System.nanoTime()
 
+//        val fileInputStream = os.read.inputStream(os.Path(file.getAbsolutePath))
+        val fileInputStream = new FileInputStream(file)
+
+
+
         val response = requests.post(
           url = s"$host/upload-file",
           data = requests.MultiPart(
@@ -155,8 +159,9 @@ object ExampleTests extends TestSuite{
             requests.MultiItem("project", "proyecto_cultivos_herbaceos"),
             requests.MultiItem("location", "proyecto_cultivos_herbaceos"),
             requests.MultiItem("teams", """["team_patata"]"""),
-//            requests.MultiItem("categories", ""),
-            requests.MultiItem("geojson_file", file, fileName)
+//            requests.MultiItem("geojson_file", file, fileName)
+            requests.MultiItem("geojson_file", fileInputStream, fileName)
+
           ),
           readTimeout = 120000
         )

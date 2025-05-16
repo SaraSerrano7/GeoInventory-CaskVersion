@@ -51,23 +51,69 @@ class UserRoutes extends cask.MainRoutes {
       val teamsList      = teams.map(_.value)
       val categoriesList = categories.map(_.value)
 
-      // Extraemos bytes y nombre original
-//      val bytes = geojson_file.bytes
-      // 1) Leer el fichero temporal que Cask ya ha escrito
       val filePath: Path = geojson_file.filePath
         .getOrElse(return Response("""{"error":"no filePath in FormFile"}""", 400))
-      val bytes: Array[Byte] =
-        Files.readAllBytes(filePath)
+
+      val tempDir = Files.createTempDirectory("geojson_uploads")
+      tempDir.toFile.deleteOnExit()
+      val tempFile = Files.createTempFile(tempDir, "geojson_", ".json")
+      tempFile.toFile.deleteOnExit()
+
+      var inputStream: InputStream = null
+      var outputStream: OutputStream = null
+      try {
+        inputStream = Files.newInputStream(filePath)
+        outputStream = Files.newOutputStream(tempFile)
+
+        // Usar un buffer para copiar por partes
+        val buffer = new Array[Byte](8192) // 8KB buffer
+        var bytesRead = 0
+
+        while ({bytesRead = inputStream.read(buffer); bytesRead != -1}) {
+          outputStream.write(buffer, 0, bytesRead)
+        }
+
+        outputStream.flush()
+      } finally {
+        // Cerrar los streams
+        if (inputStream != null) inputStream.close()
+        if (outputStream != null) outputStream.close()
+      }
+
+      ////////////////////////////////
+
+//      val bytes: Array[Byte] =
+//        Files.readAllBytes(filePath)
+
+      val fileReader = Files.newBufferedReader(tempFile, StandardCharsets.UTF_8)
+//      val jsonParser = new ujson.Parser()
+      val headerBuffer = new Array[Char](1024) // Leemos los primeros 1KB para validar
+      val charsRead = fileReader.read(headerBuffer)
+      if (charsRead <= 0) {
+        return Response("""{"error":"No se recibió un GeoJSON válido (archivo vacío)"}""", 400)
+      }
+
+      val headerContent = new String(headerBuffer, 0, charsRead)
+      if (!headerContent.trim.startsWith("{")) {
+        return Response("""{"error":"No se recibió un GeoJSON válido (formato incorrecto)"}""", 400)
+      }
+      fileReader.close()
+
+      val fileInputStream = Files.newInputStream(tempFile)
+      val geojsonData = ujson.read(fileInputStream)
+      fileInputStream.close()
+
+
       val originalName = geojson_file.fileName
 
-      val geojsonContent = new String(bytes, StandardCharsets.UTF_8)
-      if (geojsonContent.trim.isEmpty) {
-        return Response(
-          """{"error":"No se recibió un GeoJSON válido"}""",
-          400
-        )
-      }
-      val geojsonData = ujson.read(geojsonContent)
+//      val geojsonContent = new String(bytes, StandardCharsets.UTF_8)
+//      if (geojsonContent.trim.isEmpty) {
+//        return Response(
+//          """{"error":"No se recibió un GeoJSON válido"}""",
+//          400
+//        )
+//      }
+//      val geojsonData = ujson.read(geojsonContent)
       val contentType     = geojsonData("type").str
       val GEOJSON_TYPE_CHOICES = List(
         ("Feature", "Feature"),
@@ -315,8 +361,8 @@ class UserRoutes extends cask.MainRoutes {
 
   def bulk_insert_features_and_properties(conn: Connection, geojsonId: Long, geojsonData: Value.Value): Unit = {
     // 1. Preparamos el lector/ escritor de JTS
-//    val geoReader = new GeoJsonReader()
-//    val wktWriter = new WKTWriter()
+    //    val geoReader = new GeoJsonReader()
+    //    val wktWriter = new WKTWriter()
 
     // 1) Extraemos las Features de ujson.Value
     try {
@@ -347,7 +393,7 @@ class UserRoutes extends cask.MainRoutes {
           |VALUES (?, ?, ST_SetSRID(ST_GeomFromGeoJSON(?), 4326))
   """.stripMargin
 
-//      val psFeature = conn.prepareStatement(sqlFeature)
+      //      val psFeature = conn.prepareStatement(sqlFeature)
       val psFeature = conn.prepareStatement(sqlFeature, Statement.RETURN_GENERATED_KEYS)
 
       featureRows.foreach { case (fid, ftype, gj) =>
@@ -356,9 +402,9 @@ class UserRoutes extends cask.MainRoutes {
         psFeature.setString(3, gj)
         psFeature.addBatch()
       }
-//      psFeature.executeBatch()
+      //      psFeature.executeBatch()
       val countsGeom: Array[Int] = psFeature.executeBatch()
-//      println(s"[DEBUG] Insert geom: expected=${featureRows.size}, actualCounts=${countsGeom.mkString(",")}")
+      //      println(s"[DEBUG] Insert geom: expected=${featureRows.size}, actualCounts=${countsGeom.mkString(",")}")
       // Comprueba que no haya -3 (STATEMENT_SUCCESS_NO_INFO) si usas RETURN_GENERATED_KEYS
       if (countsGeom.length != featureRows.size) {
         throw new Exception(s"Número de geometrías insertadas (${countsGeom.length}) distinto a esperado (${featureRows.size})")
@@ -369,14 +415,14 @@ class UserRoutes extends cask.MainRoutes {
       val featureIds = Iterator.continually(rsFeatKeys).takeWhile(_.next()).map(_.getLong(1)).toList
       rsFeatKeys.close()
       psFeature.close()
-//      println(s"[DEBUG] featureIds generated: $featureIds")
+      //      println(s"[DEBUG] featureIds generated: $featureIds")
       if (featureIds.size != featureRows.size) {
         throw new Exception(s"Número de featureIds (${featureIds.size}) distinto a geometrías (${featureRows.size})")
       }
 
       // 2) Extraer atributos únicos de los JSON
-      val attributes      = scala.collection.mutable.LinkedHashMap.empty[(String, String), Long]
-      val attributeRows   = features.flatMap { feat =>
+      val attributes = scala.collection.mutable.LinkedHashMap.empty[(String, String), Long]
+      val attributeRows = features.flatMap { feat =>
         feat.obj.get("properties").map(_.obj.toSeq).getOrElse(Seq.empty).map {
           case (k, v) =>
             val tpe = v match {
@@ -399,9 +445,10 @@ class UserRoutes extends cask.MainRoutes {
 
 
       // 3) Bulk‐insert de atributos
-      val sqlAttr = """
-                      |INSERT INTO public."property_attribute"(attribute_name, attribute_type)
-                      |VALUES (?, ?)
+      val sqlAttr =
+        """
+          |INSERT INTO public."property_attribute"(attribute_name, attribute_type)
+          |VALUES (?, ?)
 """.stripMargin
 
       val psAttr = conn.prepareStatement(sqlAttr, java.sql.Statement.RETURN_GENERATED_KEYS)
@@ -409,9 +456,9 @@ class UserRoutes extends cask.MainRoutes {
       // 0) Obtenemos los valores permitidos del ENUM
       val allowedTypes = {
         val sqlEnum = "SELECT unnest(enum_range(NULL::geojson_attr_type_choices))"
-        val psEnum  = conn.prepareStatement(sqlEnum)
-        val rsEnum  = psEnum.executeQuery()
-        val buf     = scala.collection.mutable.ListBuffer.empty[String]
+        val psEnum = conn.prepareStatement(sqlEnum)
+        val rsEnum = psEnum.executeQuery()
+        val buf = scala.collection.mutable.ListBuffer.empty[String]
         while (rsEnum.next()) {
           buf += rsEnum.getString(1)
         }
@@ -419,19 +466,19 @@ class UserRoutes extends cask.MainRoutes {
         psEnum.close()
         buf.toSet
       }
-//      println(s"[DEBUG] Allowed attribute types: $allowedTypes")
+      //      println(s"[DEBUG] Allowed attribute types: $allowedTypes")
 
 
 
       attributeRows.foreach { case (name, tpe) =>
         psAttr.setString(1, name)
-//        psAttr.setString(2, tpe)
+        //        psAttr.setString(2, tpe)
         psAttr.setObject(2, tpe, Types.OTHER)
         psAttr.addBatch()
       }
-//      psAttr.executeBatch()
+      //      psAttr.executeBatch()
       val countsAttr: Array[Int] = psAttr.executeBatch()
-//      println(s"[DEBUG] Insert attrs: expected=${attributeRows.size}, actualCounts=${countsAttr.mkString(",")}")
+      //      println(s"[DEBUG] Insert attrs: expected=${attributeRows.size}, actualCounts=${countsAttr.mkString(",")}")
       if (countsAttr.length != attributeRows.size) {
         throw new Exception(s"Número de atributos insertados (${countsAttr.length}) distinto a esperado (${attributeRows.size})")
       }
@@ -445,14 +492,15 @@ class UserRoutes extends cask.MainRoutes {
       }
       rsAttrKeys.close()
       psAttr.close()
-//      println(s"[DEBUG] attributes map: $attributes")
+      //      println(s"[DEBUG] attributes map: $attributes")
 
 
       // 5) Preparar e insertar las relaciones Feature ↔ Atributo
-      val sqlFeatProp = """
-                          |INSERT INTO public."geojson_feature_properties"
-                          |  (feature_id, attribute_id, attribute_value)
-                          |VALUES (?, ?, ?)
+      val sqlFeatProp =
+        """
+          |INSERT INTO public."geojson_feature_properties"
+          |  (feature_id, attribute_id, attribute_value)
+          |VALUES (?, ?, ?)
 """.stripMargin
 
       val psFP = conn.prepareStatement(sqlFeatProp)
@@ -482,11 +530,11 @@ class UserRoutes extends cask.MainRoutes {
           }
         }
       }
-//      psFP.executeBatch()
+      //      psFP.executeBatch()
       val countsRel: Array[Int] = psFP.executeBatch()
-//      println(
-//        s"[DEBUG] Insert relations: expected=${features.size}*propsPerFeature, counts=${countsRel.mkString(",")}"
-//      )
+      //      println(
+      //        s"[DEBUG] Insert relations: expected=${features.size}*propsPerFeature, counts=${countsRel.mkString(",")}"
+      //      )
       if (countsRel.exists(_ <= 0)) {
         throw new Exception(s"Alguna relación Feature–Atributo no se insertó correctamente: ${countsRel.mkString(",")}")
       }
