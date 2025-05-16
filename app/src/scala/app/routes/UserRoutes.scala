@@ -143,8 +143,8 @@ class UserRoutes extends cask.MainRoutes {
   def sql_queries(fileName: String, contentType: String, teamsList: Seq[String], project: String, location: String, categoriesList: Seq[String], geojsonData: Value.Value): Unit = {
 
     val url_db = "jdbc:postgresql://localhost:5432/LocalGeoInventory_Cask"
-    val user = "xxxxxx"
-    val password = "xxxxxx"
+    val user = "dbuser"
+    val password = "irtapass"
 
     var conn: Connection  = null
     var ps:   PreparedStatement = null
@@ -177,12 +177,13 @@ class UserRoutes extends cask.MainRoutes {
         """.stripMargin
 
       ps = conn.prepareStatement(sqlGeo)
-      ps.setInt(1, 16)
+      ps.setInt(1, 1)
       ps.setString(2, fileName.value)
       ps.setObject(3, contentType, Types.OTHER)
       val rsGeo: ResultSet = ps.executeQuery()
       if (!rsGeo.next()) throw new Exception("No se creó Files_geojson")
       val geojsonId = rsGeo.getLong("file_ptr_id")
+  //    println("geojsonId", geojsonId)
       rsGeo.close()
       ps.close()
 
@@ -203,15 +204,19 @@ class UserRoutes extends cask.MainRoutes {
           |  (SELECT digitalresource_ptr_id FROM public."team" WHERE name = ?)
           |)
         """.stripMargin
+        
+    //    println("precreate access")
 
       teamsList.foreach { tv =>
         ps = conn.prepareStatement(sqlAcc)
-        ps.setInt(1, 16)                       // creator_id
+        ps.setInt(1, 1)                       // creator_id
         ps.setLong(2, geojsonId)             // accessed_file_id
         ps.setString(3, tv.value)            // team name
         ps.executeUpdate()
         ps.close()
       }
+      
+      //println("postcreate access")
 
       // 4) Obtener project_id
       val sqlProj = """SELECT digitalresource_ptr_id FROM public."project" WHERE name = ?"""
@@ -220,6 +225,9 @@ class UserRoutes extends cask.MainRoutes {
       val rsProj = ps.executeQuery()
       if (!rsProj.next()) throw new Exception("Proyecto no encontrado")
       val projectId = rsProj.getLong("digitalresource_ptr_id")
+      
+ //     println("projectId", projectId)
+      
       rsProj.close()
       ps.close()
 
@@ -238,7 +246,7 @@ class UserRoutes extends cask.MainRoutes {
             |VALUES ((SELECT id FROM dr), '', NULL, ?, ?)
           """.stripMargin
         ps = conn.prepareStatement(sqlLocRoot)
-        ps.setInt(1, 16)
+        ps.setInt(1, 1)
         ps.setLong(2, projectId)
         ps.setLong(3, geojsonId)
         ps.executeUpdate()
@@ -272,6 +280,8 @@ class UserRoutes extends cask.MainRoutes {
         ps.executeUpdate()
         ps.close()
       }
+      
+     // println("post location")
 
       // 6) Categorías
       val sqlCat =
@@ -297,6 +307,8 @@ class UserRoutes extends cask.MainRoutes {
         ps.executeUpdate()
         ps.close()
       }
+      
+    //  println("post categories")
 
       bulk_insert_features_and_properties(conn, geojsonId, geojsonData)
 
@@ -358,7 +370,7 @@ class UserRoutes extends cask.MainRoutes {
       }
 //      psFeature.executeBatch()
       val countsGeom: Array[Int] = psFeature.executeBatch()
-//      println(s"[DEBUG] Insert geom: expected=${featureRows.size}, actualCounts=${countsGeom.mkString(",")}")
+      println(s"[DEBUG] Insert geom: expected=${featureRows.size}, actualCounts=${countsGeom.mkString(",")}")
       // Comprueba que no haya -3 (STATEMENT_SUCCESS_NO_INFO) si usas RETURN_GENERATED_KEYS
       if (countsGeom.length != featureRows.size) {
         throw new Exception(s"Número de geometrías insertadas (${countsGeom.length}) distinto a esperado (${featureRows.size})")
@@ -369,7 +381,7 @@ class UserRoutes extends cask.MainRoutes {
       val featureIds = Iterator.continually(rsFeatKeys).takeWhile(_.next()).map(_.getLong(1)).toList
       rsFeatKeys.close()
       psFeature.close()
-//      println(s"[DEBUG] featureIds generated: $featureIds")
+      println(s"[DEBUG] featureIds generated: $featureIds")
       if (featureIds.size != featureRows.size) {
         throw new Exception(s"Número de featureIds (${featureIds.size}) distinto a geometrías (${featureRows.size})")
       }
@@ -419,7 +431,7 @@ class UserRoutes extends cask.MainRoutes {
         psEnum.close()
         buf.toSet
       }
-//      println(s"[DEBUG] Allowed attribute types: $allowedTypes")
+      println(s"[DEBUG] Allowed attribute types: $allowedTypes")
 
 
 
@@ -431,7 +443,7 @@ class UserRoutes extends cask.MainRoutes {
       }
 //      psAttr.executeBatch()
       val countsAttr: Array[Int] = psAttr.executeBatch()
-//      println(s"[DEBUG] Insert attrs: expected=${attributeRows.size}, actualCounts=${countsAttr.mkString(",")}")
+      println(s"[DEBUG] Insert attrs: expected=${attributeRows.size}, actualCounts=${countsAttr.mkString(",")}")
       if (countsAttr.length != attributeRows.size) {
         throw new Exception(s"Número de atributos insertados (${countsAttr.length}) distinto a esperado (${attributeRows.size})")
       }
@@ -445,7 +457,7 @@ class UserRoutes extends cask.MainRoutes {
       }
       rsAttrKeys.close()
       psAttr.close()
-//      println(s"[DEBUG] attributes map: $attributes")
+      println(s"[DEBUG] attributes map: $attributes")
 
 
       // 5) Preparar e insertar las relaciones Feature ↔ Atributo
@@ -484,9 +496,9 @@ class UserRoutes extends cask.MainRoutes {
       }
 //      psFP.executeBatch()
       val countsRel: Array[Int] = psFP.executeBatch()
-//      println(
-//        s"[DEBUG] Insert relations: expected=${features.size}*propsPerFeature, counts=${countsRel.mkString(",")}"
-//      )
+      println(
+        s"[DEBUG] Insert relations: expected=${features.size}*propsPerFeature, counts=${countsRel.mkString(",")}"
+      )
       if (countsRel.exists(_ <= 0)) {
         throw new Exception(s"Alguna relación Feature–Atributo no se insertó correctamente: ${countsRel.mkString(",")}")
       }

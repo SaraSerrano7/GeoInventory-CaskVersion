@@ -19,9 +19,9 @@ import scala.util.Using
 object ExampleTests extends TestSuite{
 
   // Recoge las props de testDB
-  private val testDbUrl  = "jdbc:postgresql://localhost:5432/test_LocalGeoInventory_Cask"
-  private val testDbUser = "xxxxx"
-  private val testDbPass = "xxxxxx"
+  private val testDbUrl  = "jdbc:postgresql://localhost:5432/LocalGeoInventory_Cask"
+  private val testDbUser = "dbuser"
+  private val testDbPass = "irtapass"
 
   // Establece las props de sistema **una sola vez**, antes de arrancar Cask
   sys.props += ("JDBC_URL"  -> testDbUrl)
@@ -32,19 +32,19 @@ object ExampleTests extends TestSuite{
     val server = Undertow.builder
 //      .setWorkerThreads(200)
 //      .setIoThreads(Runtime.getRuntime.availableProcessors())
-      .addHttpListener(8081, "localhost")
+      .addHttpListener(8091, "localhost")
       .setHandler(example.defaultHandler)
       .build
     server.start()
     val res =
-      try f("http://localhost:8081")
+      try f("http://localhost:8091")
       finally server.stop()
     res
   }
 
   def dropAllTables(): Unit = {
     val dropCmd =
-      """psql -U dbuser -d test_LocalGeoInventory_Cask -h localhost -c "DO $$ DECLARE r RECORD; BEGIN FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'public') LOOP EXECUTE 'DROP TABLE IF EXISTS public.' || quote_ident(r.tablename) || ' CASCADE'; END LOOP; END $$;" """
+      """psql -U dbuser -d LocalGeoInventory_Cask -h localhost -c "DO $$ DECLARE r RECORD; BEGIN FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'public') LOOP EXECUTE 'DROP TABLE IF EXISTS public.' || quote_ident(r.tablename) || ' CASCADE'; END LOOP; END $$;" """
     val result = dropCmd.!
     assert(result == 0)
   }
@@ -52,9 +52,9 @@ object ExampleTests extends TestSuite{
 
   def initDb(): Unit = {
     try {
-      val url_db = "jdbc:postgresql://localhost:5432/test_LocalGeoInventory_Cask"
-      val user = "xxxxx"
-      val password = "xxxxxx"
+      val url_db = "jdbc:postgresql://localhost:5432/LocalGeoInventory_Cask"
+      val user = "dbuser"
+      val password = "irtapass"
 
       val loader = getClass.getClassLoader
       val url = loader.getResource("sql/init_db.sql")
@@ -97,8 +97,8 @@ object ExampleTests extends TestSuite{
     Using.Manager { use =>
 //      val conn = use(DriverManager.getConnection("jdbc:postgresql://localhost:5432/tu_db", "usuario", "contraseña"))
       val url_db = "jdbc:postgresql://localhost:5432/LocalGeoInventory_Cask"
-      val user = "xxxxxx"
-      val password = "xxxxxx"
+      val user = "dbuser"
+      val password = "irtapass"
 
       val conn = DriverManager.getConnection(url_db, user, password)
 
@@ -142,7 +142,7 @@ object ExampleTests extends TestSuite{
 
 
       for (file <- geojsons) {
-        System.gc()
+//        System.gc()
         check_db_content()
 
         val fileName = file.getName
@@ -184,6 +184,8 @@ object ExampleTests extends TestSuite{
 
       println("\nResumen:")
       resultados.foreach { case (f, ms) => println(f"$f - $ms ms") }
+
+//        ()
     }
 
   }

@@ -1,4 +1,4 @@
-package build
+//package build
 import mill._, scalalib._
 
 object app extends ScalaModule {
@@ -25,6 +25,14 @@ object app extends ScalaModule {
     ivy"org.typelevel::cats-effect:3.5.4"
 
   )
+
+
+//    override def forkArgs: T[Seq[String]] = T{
+//    Seq(
+//        "-Xms2G",
+//        "-Xmx3G",
+//)
+//}
   object test extends ScalaTests with TestModule.Utest{
 
     def ivyDeps: T[Agg[Dep]] = Agg(

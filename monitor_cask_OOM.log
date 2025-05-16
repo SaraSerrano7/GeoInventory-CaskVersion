@@ -1,0 +1,2400 @@
+##########################
+2025-05-15 07:42:04
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:04 up 121 days, 11:29,  2 users,  load average: 1.25, 0.88, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:05
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:05 up 121 days, 11:29,  2 users,  load average: 1.23, 0.88, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:06
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:06 up 121 days, 11:29,  2 users,  load average: 1.23, 0.88, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:07
+Uso de CPU y Memoria:
+Uso de CPU: 50%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:08 up 121 days, 11:29,  2 users,  load average: 1.23, 0.88, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:09
+Uso de CPU y Memoria:
+Uso de CPU: 66.6%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:09 up 121 days, 11:29,  2 users,  load average: 1.23, 0.88, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:10
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:10 up 121 days, 11:29,  2 users,  load average: 1.13, 0.87, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:11
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:11 up 121 days, 11:29,  2 users,  load average: 1.13, 0.87, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:12
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:12 up 121 days, 11:29,  2 users,  load average: 1.13, 0.87, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:13
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:14 up 121 days, 11:29,  2 users,  load average: 1.13, 0.87, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:15
+Uso de CPU y Memoria:
+Uso de CPU: 50%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:15 up 121 days, 11:29,  2 users,  load average: 1.04, 0.85, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:16
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:16 up 121 days, 11:29,  2 users,  load average: 1.04, 0.85, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:17
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:17 up 121 days, 11:29,  2 users,  load average: 1.04, 0.85, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:18
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 46%
+
+Carga del Sistema:
+ 07:42:18 up 121 days, 11:29,  2 users,  load average: 1.04, 0.85, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:19
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:19 up 121 days, 11:29,  2 users,  load average: 0.96, 0.84, 0.63
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:20
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:21 up 121 days, 11:29,  2 users,  load average: 0.96, 0.84, 0.63
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:22
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:22 up 121 days, 11:29,  2 users,  load average: 0.96, 0.84, 0.63
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:23
+Uso de CPU y Memoria:
+Uso de CPU: 50%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:23 up 121 days, 11:29,  2 users,  load average: 0.96, 0.84, 0.63
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:24
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:24 up 121 days, 11:29,  2 users,  load average: 0.96, 0.84, 0.63
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:25
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:25 up 121 days, 11:29,  2 users,  load average: 0.96, 0.84, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:26
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:27 up 121 days, 11:29,  2 users,  load average: 0.96, 0.84, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:28
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:28 up 121 days, 11:29,  2 users,  load average: 0.96, 0.84, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:29
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:29 up 121 days, 11:30,  2 users,  load average: 0.96, 0.84, 0.64
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:30
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:42:30 up 121 days, 11:30,  2 users,  load average: 0.88, 0.83, 0.63
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:31
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 48%
+
+Carga del Sistema:
+ 07:42:31 up 121 days, 11:30,  2 users,  load average: 0.88, 0.83, 0.63
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:32
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 49%
+
+Carga del Sistema:
+ 07:42:33 up 121 days, 11:30,  2 users,  load average: 0.88, 0.83, 0.63
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:34
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 51%
+
+Carga del Sistema:
+ 07:42:34 up 121 days, 11:30,  2 users,  load average: 0.88, 0.83, 0.63
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:35
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 51%
+
+Carga del Sistema:
+ 07:42:35 up 121 days, 11:30,  2 users,  load average: 1.29, 0.91, 0.66
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:36
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 51%
+
+Carga del Sistema:
+ 07:42:36 up 121 days, 11:30,  2 users,  load average: 1.29, 0.91, 0.66
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:37
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 51%
+
+Carga del Sistema:
+ 07:42:38 up 121 days, 11:30,  2 users,  load average: 1.29, 0.91, 0.66
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:39
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 51%
+
+Carga del Sistema:
+ 07:42:39 up 121 days, 11:30,  2 users,  load average: 1.29, 0.91, 0.66
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:40
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 52%
+
+Carga del Sistema:
+ 07:42:40 up 121 days, 11:30,  2 users,  load average: 1.67, 1.00, 0.69
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:41
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 53%
+
+Carga del Sistema:
+ 07:42:41 up 121 days, 11:30,  2 users,  load average: 1.67, 1.00, 0.69
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:42
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 55%
+
+Carga del Sistema:
+ 07:42:43 up 121 days, 11:30,  2 users,  load average: 1.67, 1.00, 0.69
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:44
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 55%
+
+Carga del Sistema:
+ 07:42:44 up 121 days, 11:30,  2 users,  load average: 1.67, 1.00, 0.69
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:45
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 56%
+
+Carga del Sistema:
+ 07:42:45 up 121 days, 11:30,  2 users,  load average: 1.86, 1.05, 0.71
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:46
+Uso de CPU y Memoria:
+Uso de CPU: 60%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 56%
+
+Carga del Sistema:
+ 07:42:46 up 121 days, 11:30,  2 users,  load average: 1.86, 1.05, 0.71
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:47
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 56%
+
+Carga del Sistema:
+ 07:42:48 up 121 days, 11:30,  2 users,  load average: 1.86, 1.05, 0.71
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:49
+Uso de CPU y Memoria:
+Uso de CPU: 66.7%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 56%
+
+Carga del Sistema:
+ 07:42:49 up 121 days, 11:30,  2 users,  load average: 1.86, 1.05, 0.71
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:50
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 75%
+
+Carga del Sistema:
+ 07:42:50 up 121 days, 11:30,  2 users,  load average: 1.79, 1.05, 0.71
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:51
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 80%
+
+Carga del Sistema:
+ 07:42:51 up 121 days, 11:30,  2 users,  load average: 1.79, 1.05, 0.71
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:52
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:42:53 up 121 days, 11:30,  2 users,  load average: 1.79, 1.05, 0.71
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:54
+Uso de CPU y Memoria:
+Uso de CPU: 75%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:42:54 up 121 days, 11:30,  2 users,  load average: 1.79, 1.05, 0.71
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:55
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:42:55 up 121 days, 11:30,  2 users,  load average: 1.72, 1.04, 0.71
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:56
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:42:56 up 121 days, 11:30,  2 users,  load average: 1.72, 1.04, 0.71
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:57
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:42:58 up 121 days, 11:30,  2 users,  load average: 1.72, 1.04, 0.71
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:42:59
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:42:59 up 121 days, 11:30,  2 users,  load average: 1.72, 1.04, 0.71
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:00
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:00 up 121 days, 11:30,  2 users,  load average: 1.75, 1.06, 0.72
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:01
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:01 up 121 days, 11:30,  2 users,  load average: 1.75, 1.06, 0.72
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:02
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:03 up 121 days, 11:30,  2 users,  load average: 1.75, 1.06, 0.72
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:04
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:04 up 121 days, 11:30,  2 users,  load average: 1.75, 1.06, 0.72
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:05
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:05 up 121 days, 11:30,  2 users,  load average: 1.77, 1.08, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:06
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:06 up 121 days, 11:30,  2 users,  load average: 1.77, 1.08, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:07
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:08 up 121 days, 11:30,  2 users,  load average: 1.77, 1.08, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:09
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:09 up 121 days, 11:30,  2 users,  load average: 1.77, 1.08, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:10
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:10 up 121 days, 11:30,  2 users,  load average: 1.79, 1.09, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:11
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:11 up 121 days, 11:30,  2 users,  load average: 1.79, 1.09, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:13
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:13 up 121 days, 11:30,  2 users,  load average: 1.79, 1.09, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:14
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  53% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:14 up 121 days, 11:30,  2 users,  load average: 1.79, 1.09, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:15
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:15 up 121 days, 11:30,  2 users,  load average: 1.80, 1.11, 0.74
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:16
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:16 up 121 days, 11:30,  2 users,  load average: 1.80, 1.11, 0.74
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:17
+Uso de CPU y Memoria:
+Uso de CPU: 50%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:18 up 121 days, 11:30,  2 users,  load average: 1.80, 1.11, 0.74
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:19
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:19 up 121 days, 11:30,  2 users,  load average: 1.80, 1.11, 0.74
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:20
+Uso de CPU y Memoria:
+Uso de CPU: 50%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 83%
+
+Carga del Sistema:
+ 07:43:20 up 121 days, 11:30,  2 users,  load average: 1.74, 1.11, 0.74
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:21
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 46%
+
+Carga del Sistema:
+ 07:43:21 up 121 days, 11:30,  2 users,  load average: 1.74, 1.11, 0.74
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:22
+Uso de CPU y Memoria:
+Uso de CPU: 50%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 46%
+
+Carga del Sistema:
+ 07:43:22 up 121 days, 11:30,  2 users,  load average: 1.74, 1.11, 0.74
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:23
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 46%
+
+Carga del Sistema:
+ 07:43:23 up 121 days, 11:30,  2 users,  load average: 1.74, 1.11, 0.74
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:24
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 46%
+
+Carga del Sistema:
+ 07:43:25 up 121 days, 11:30,  2 users,  load average: 1.60, 1.09, 0.74
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:26
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 46%
+
+Carga del Sistema:
+ 07:43:26 up 121 days, 11:30,  2 users,  load average: 1.60, 1.09, 0.74
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:27
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 46%
+
+Carga del Sistema:
+ 07:43:27 up 121 days, 11:30,  2 users,  load average: 1.60, 1.09, 0.74
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:28
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 46%
+
+Carga del Sistema:
+ 07:43:28 up 121 days, 11:30,  2 users,  load average: 1.60, 1.09, 0.74
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:29
+Uso de CPU y Memoria:
+Uso de CPU: 50%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:43:29 up 121 days, 11:31,  2 users,  load average: 1.47, 1.07, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:30
+Uso de CPU y Memoria:
+Uso de CPU: 50%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:43:31 up 121 days, 11:31,  2 users,  load average: 1.47, 1.07, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:32
+Uso de CPU y Memoria:
+Uso de CPU: 50%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:43:32 up 121 days, 11:31,  2 users,  load average: 1.47, 1.07, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:33
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:43:33 up 121 days, 11:31,  2 users,  load average: 1.47, 1.07, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:34
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:43:34 up 121 days, 11:31,  2 users,  load average: 1.47, 1.07, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:35
+Uso de CPU y Memoria:
+Uso de CPU: 50%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:43:35 up 121 days, 11:31,  2 users,  load average: 1.35, 1.05, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:36
+Uso de CPU y Memoria:
+Uso de CPU: 50%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:43:36 up 121 days, 11:31,  2 users,  load average: 1.35, 1.05, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:37
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:43:38 up 121 days, 11:31,  2 users,  load average: 1.35, 1.05, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:39
+Uso de CPU y Memoria:
+Uso de CPU: 0%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:43:39 up 121 days, 11:31,  2 users,  load average: 1.35, 1.05, 0.73
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################
+##########################
+2025-05-15 07:43:40
+Uso de CPU y Memoria:
+Uso de CPU: 100%
+
+Uso de Disco: 
+Filesystem      Size  Used Avail Use% Mounted on
+udev            1.9G     0  1.9G   0% /dev
+tmpfs           392M  800K  391M   1% /run
+/dev/sda         79G   39G   36G  52% /
+tmpfs           2.0G  5.1M  2.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/loop2       67M   67M     0 100% /snap/core24/739
+/dev/loop4       45M   45M     0 100% /snap/snapd/23771
+/dev/loop6       56M   56M     0 100% /snap/certbot/4482
+/dev/loop1       56M   56M     0 100% /snap/certbot/4557
+/dev/loop8       64M   64M     0 100% /snap/core20/2501
+/dev/loop3       67M   67M     0 100% /snap/core24/888
+/dev/loop7       51M   51M     0 100% /snap/snapd/24505
+/dev/loop5       64M   64M     0 100% /snap/core20/2571
+tmpfs           392M  4.0K  392M   1% /run/user/0
+
+Porcentaje de Memoria RAM utilizada: 47%
+
+Carga del Sistema:
+ 07:43:40 up 121 days, 11:31,  2 users,  load average: 1.25, 1.03, 0.72
+
+Información del Sistema:
+Linux localhost 6.1.0-22-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.94-1 (2024-06-21) x86_64 GNU/Linux
+##########################

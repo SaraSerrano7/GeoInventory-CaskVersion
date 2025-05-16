@@ -23,9 +23,9 @@ object MinimalApplication extends cask.MainRoutes{
 //      val user = "xxxxx"
 //      val password = "xxxxxx"
 
-      val url_db  = sys.env.getOrElse("JDBC_URL", "jdbc:postgresql://localhost:5432/test_LocalGeoInventory_Cask")
-      val user = sys.env.getOrElse("JDBC_USER", "xxxxx")
-      val password = sys.env.getOrElse("JDBC_PASS", "xxxxx")
+      val url_db  = sys.env.getOrElse("JDBC_URL", "jdbc:postgresql://localhost:5432/LocalGeoInventory_Cask")
+      val user = sys.env.getOrElse("JDBC_USER", "dbuser")
+      val password = sys.env.getOrElse("JDBC_PASS", "irtapass")
 
 
       val loader = getClass.getClassLoader
@@ -80,7 +80,7 @@ object MinimalApplication extends cask.MainRoutes{
 
   initDb()
 
-  override def port: Int = 8080
+  override def port: Int = 8090
 
   val userRoutes = new routes.UserRoutes()
 //  val dataRoutes = new routes.DataRoutes()

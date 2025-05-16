@@ -1,0 +1,30 @@
+[111] -------------------------------- Running Tests --------------------------------
+[111] URL de sql/init_db.sql: file:/opt/GeoInventory-CaskVersion/app/src/scala/resources/sql/init_db.sql
+[111] [initDb] Ejecutando script completo…
+[111] [initDb] Tablas creadas o ya existían.
+[111] 
+[111] 🕒 Hora: 21:49:54 - Preparando DB
+[111] URL de sql/init_db.sql: file:/opt/GeoInventory-CaskVersion/app/src/scala/resources/sql/init_db.sql
+[111] [initDb] Ejecutando script completo…
+[111] [initDb] Tablas creadas o ya existían.
+[111] 
+[111] 🕒 Hora: 21:49:54 - DB lista
+[111] 📊 Registros: geojson_feature = 1, geojson_feature_properties = 2
+[111] Matched Feature
+[111] [DEBUG] Insert geom: expected=1, actualCounts=1
+[111] [DEBUG] featureIds generated: List(2)
+[111] [DEBUG] Allowed attribute types: HashSet(float, str, bool, int, NoneType)
+[111] [DEBUG] Insert attrs: expected=2, actualCounts=1,1
+[111] [DEBUG] attributes map: LinkedHashMap((name,str) -> 3, (year,int) -> 4)
+[111] [DEBUG] Insert relations: expected=1*propsPerFeature, counts=1,1
+[111] FeaturePoligon.geojson: 609ms | Status: 200
+[111] 
+[111] 🕒 Hora: 21:49:55 - Fichero procesado FeaturePoligon.geojson (609ms)
+[111] 📊 Registros: geojson_feature = 2, geojson_feature_properties = 4
+[111] 
+[111] Tiempo promedio: 609 ms
+[111] 
+[111] Resumen:
+[111] FeaturePoligon.geojson - 609 ms
+[111] [32m+[39m app.ExampleTests.UploadGeoJSONFilesPerformance [2m2263ms[0m  
+[111] Tests: 1, Passed: 1, Failed: 0

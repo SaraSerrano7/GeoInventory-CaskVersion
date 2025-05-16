@@ -1,0 +1,60 @@
+[111] -------------------------------- Running Tests --------------------------------
+[111] URL de sql/init_db.sql: file:/opt/GeoInventory-CaskVersion/app/src/scala/resources/sql/init_db.sql
+[111] [initDb] Ejecutando script completo…
+[111] [initDb] Tablas creadas o ya existían.
+[111] 
+[111] 🕒 Hora: 19:52:28 - Preparando DB
+[111] URL de sql/init_db.sql: file:/opt/GeoInventory-CaskVersion/app/src/scala/resources/sql/init_db.sql
+[111] [initDb] Ejecutando script completo…
+[111] [initDb] Tablas creadas o ya existían.
+[111] 
+[111] 🕒 Hora: 19:52:29 - DB lista
+[111] 📊 Registros: geojson_feature = 0, geojson_feature_properties = 0
+[111] [31mX[39m app.ExampleTests.UploadGeoJSONFilesPerformance [2m30949ms[0m 
+[111]   [91m[4mrequests.RequestFailedException[39m[24m: [91mRequest to http://localhost:8091/upload-file failed with status code 500[39m
+[111]   [91mjava.lang.OutOfMemoryError: Java heap space[39m
+[111]   [91m	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2052)[39m
+[111]   [91m	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)[39m
+[111]   [91m	at java.base/java.lang.Double.parseDouble(Double.java:651)[39m
+[111]   [91m	at scala.collection.StringOps$.toDouble$extension(StringOps.scala:951)[39m
+[111]   [91m	at ujson.Value$.visitFloat64StringParts(Value.scala:184)[39m
+[111]   [91m	at ujson.Value$.visitFloat64StringParts(Value.scala:126)[39m
+[111]   [91m	at upickle.core.Visitor.visitFloat64CharParts(Visitor.scala:62)[39m
+[111]   [91m	at upickle.core.Visitor.visitFloat64CharParts$(Visitor.scala:61)[39m
+[111]   [91m	at ujson.Value$.visitFloat64CharParts(Value.scala:126)[39m
+[111]   [91m	at ujson.CharParser.visitFloat64StringPartsWithWrapper(CharParser.scala:176)[39m
+[111]   [91m	at ujson.CharParser.parseNum(CharParser.scala:161)[39m
+[111]   [91m	at ujson.CharParser.parseNested(CharParser.scala:424)[39m
+[111]   [91m	at ujson.CharParser.parseTopLevel0(CharParser.scala:339)[39m
+[111]   [91m	at ujson.CharParser.parseTopLevel(CharParser.scala:323)[39m
+[111]   [91m	at ujson.CharParser.parse(CharParser.scala:72)[39m
+[111]   [91m	at ujson.StringParser$.transform(StringParser.scala:28)[39m
+[111]   [91m	at ujson.StringParser$.transform(StringParser.scala:27)[39m
+[111]   [91m	at ujson.Readable$fromTransformer.transform(Readable.scala:19)[39m
+[111]   [91m	at ujson.Readable$.transform(Readable.scala:15)[39m
+[111]   [91m	at ujson.Readable$.transform(Readable.scala:13)[39m
+[111]   [91m	at upickle.core.BufferedValue$.maybeSortKeysTransform(BufferedValue.scala:76)[39m
+[111]   [91m	at ujson.package$.transform(package.scala:8)[39m
+[111]   [91m	at ujson.package$.$anonfun$read$1(package.scala:15)[39m
+[111]   [91m	at ujson.package$$$Lambda$495/0x00007f6dc03e4310.apply(Unknown Source)[39m
+[111]   [91m	at upickle.core.TraceVisitor$.withTrace(TraceVisitor.scala:18)[39m
+[111]   [91m	at ujson.package$.read(package.scala:15)[39m
+[111]   [91m	at routes.UserRoutes.upload_file(UserRoutes.scala:70)[39m
+[111]   [91m	at routes.UserRoutes.$anonfun$new$12(UserRoutes.scala:43)[39m
+[111]   [91m	at routes.UserRoutes$$Lambda$491/0x00007f6dc03e0000.apply(Unknown Source)[39m
+[111]   [91m	at cask.router.Result$Success.map(Result.scala:21)[39m
+[111]   [91m	at cask.router.Result$Success.map(Result.scala:20)[39m
+[111]   [91m	at routes.UserRoutes.$anonfun$new$3(UserRoutes.scala:43)[39m
+[111]     [31mrequests.Requester$$anon$1.[91mreadBytesThrough[31m([91mRequester.scala[39m:[91m398[31m)[39m
+[111]     [31mgeny.Readable.[91mwriteBytesTo[31m([91mWritable.scala[39m:[91m93[31m)[39m
+[111]     [31mgeny.Readable.[91mwriteBytesTo$[31m([91mWritable.scala[39m:[91m93[31m)[39m
+[111]     [31mrequests.Requester$$anon$1.[91mwriteBytesTo[31m([91mRequester.scala[39m:[91m191[31m)[39m
+[111]     [31mrequests.Requester.[91mapply[31m([91mRequester.scala[39m:[91m140[31m)[39m
+[111]     [31mapp.ExampleTests$.[91m$anonfun$tests$6[31m([91mExampleTests.scala[39m:[91m151[31m)[39m
+[111]     [31mapp.ExampleTests$.[91m$anonfun$tests$6$adapted[31m([91mExampleTests.scala[39m:[91m144[31m)[39m
+[111]     [31mscala.collection.ArrayOps$.[91mforeach$extension[31m([91mArrayOps.scala[39m:[91m1323[31m)[39m
+[111]     [31mapp.ExampleTests$.[91m$anonfun$tests$3[31m([91mExampleTests.scala[39m:[91m144[31m)[39m
+[111]     [31mapp.ExampleTests$.[91m$anonfun$tests$3$adapted[31m([91mExampleTests.scala[39m:[91m121[31m)[39m
+[111]     [31mapp.ExampleTests$.[91mwithServer[31m([91mExampleTests.scala[39m:[91m40[31m)[39m
+[111]     [31mapp.ExampleTests$.[91m$anonfun$tests$2[31m([91mExampleTests.scala[39m:[91m121[31m)[39m
+[111] Tests: 1, Passed: 0, Failed: 1
