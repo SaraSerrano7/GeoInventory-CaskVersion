@@ -184,6 +184,208 @@ class UserRoutes extends cask.MainRoutes {
         Response(s"Error al procesar la subida: ${e.getMessage}", 500)
 
     }
+
+  }
+
+  def processGeoJsonStreaming(
+                               filePath: Path,
+                               originalName: String,
+                               fileName: String,
+                               project: String,
+                               location: String,
+                               teams: Seq[String],
+                               categories: Seq[String]
+                             ): Unit = {
+    import java.io.{BufferedReader, InputStreamReader}
+    import java.sql.{Connection, DriverManager, PreparedStatement}
+    import com.fasterxml.jackson.core.{JsonFactory, JsonParser, JsonToken}
+
+    // Configuración de la conexión a la base de datos
+    val dbUrl = "jdbc:postgresql://localhost:5432/tu_base_de_datos"
+    val dbUser = "tu_usuario"
+    val dbPassword = "tu_password"
+
+    // Preparar la conexión a la BD
+    var connection: Connection = null
+    var stmt: PreparedStatement = null
+    var reader: BufferedReader = null
+    var jsonParser: JsonParser = null
+
+    try {
+      // Conexión a la base de datos
+      Class.forName("org.postgresql.Driver")
+      connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword)
+      connection.setAutoCommit(false)
+
+      // Preparar statement para inserción
+      stmt = connection.prepareStatement(
+        """
+          |INSERT INTO geojson_features
+          |(file_name, original_name, project, location, teams, categories, feature_id, properties, geometry)
+          |VALUES (?, ?, ?, ?, ?, ?, ?, ?::jsonb, ?::jsonb)
+      """.stripMargin
+      )
+
+      // Crear un parser de JSON streaming
+      val factory = new JsonFactory()
+      reader = new BufferedReader(new InputStreamReader(Files.newInputStream(filePath), StandardCharsets.UTF_8))
+      jsonParser = factory.createParser(reader)
+
+      // Variables para almacenar datos temporales mientras parseamos
+      var featureCount = 0
+      var currentFeatureId: String = null
+      var currentProperties: String = null
+      var currentGeometry: String = null
+      var depth = 0
+      var inFeatures = false
+      var inFeature = false
+      var inProperties = false
+      var inGeometry = false
+      var propertyBuilder = new StringBuilder()
+      var geometryBuilder = new StringBuilder()
+
+      // Recorrer el JSON token por token
+      var token: JsonToken = null
+      while ({token = jsonParser.nextToken(); token != null}) {
+        val currentToken = token
+
+        // Control de profundidad para saber en qué parte del JSON estamos
+        if (currentToken == JsonToken.START_OBJECT || currentToken == JsonToken.START_ARRAY) {
+          depth += 1
+        } else if (currentToken == JsonToken.END_OBJECT || currentToken == JsonToken.END_ARRAY) {
+          depth -= 1
+        }
+
+        // Detectar entrada y salida de la sección "features"
+        if (depth == 1 && currentToken == JsonToken.FIELD_NAME && jsonParser.getCurrentName() == "features") {
+          inFeatures = true
+          // Consumir el START_ARRAY después de "features" pero no hacer nada más en esta iteración
+          jsonParser.nextToken() // Avanza al próximo token (START_ARRAY)
+          depth += 1
+        } else if (inFeatures && depth == 2 && currentToken == JsonToken.START_OBJECT) {
+          // Si estamos dentro de features, procesar cada feature individualmente
+          inFeature = true
+          // Reiniciar variables para una nueva feature
+          currentFeatureId = java.util.UUID.randomUUID().toString()
+          currentProperties = null
+          currentGeometry = null
+        } else if (inFeature && depth == 3 && currentToken == JsonToken.FIELD_NAME) {
+          // Detectar propiedades y geometría dentro de una feature
+          val fieldName = jsonParser.getCurrentName()
+          if (fieldName == "properties") {
+            inProperties = true
+            propertyBuilder = new StringBuilder()
+            // Capturar el objeto properties completo
+            jsonParser.nextToken() // Mover al inicio del objeto properties
+            captureJsonObject(jsonParser, propertyBuilder)
+            currentProperties = propertyBuilder.toString()
+            inProperties = false
+          } else if (fieldName == "geometry") {
+            inGeometry = true
+            geometryBuilder = new StringBuilder()
+            // Capturar el objeto geometry completo
+            jsonParser.nextToken() // Mover al inicio del objeto geometry
+            captureJsonObject(jsonParser, geometryBuilder)
+            currentGeometry = geometryBuilder.toString()
+            inGeometry = false
+          }
+        } else if (inFeature && depth == 2 && currentToken == JsonToken.END_OBJECT) {
+          // Al finalizar una feature, insertarla en la base de datos
+          // Insertar en la BD
+          stmt.setString(1, fileName)
+          stmt.setString(2, originalName)
+          stmt.setString(3, project)
+          stmt.setString(4, location)
+          stmt.setArray(5, connection.createArrayOf("text", teams.toArray))
+          stmt.setArray(6, connection.createArrayOf("text", categories.toArray))
+          stmt.setString(7, currentFeatureId)
+          stmt.setString(8, currentProperties)
+          stmt.setString(9, currentGeometry)
+
+          stmt.executeUpdate()
+          featureCount += 1
+
+          // Commit cada 100 features para evitar transacciones muy grandes
+          if (featureCount % 100 == 0) {
+            connection.commit()
+          }
+
+          inFeature = false
+        }
+      }
+
+      // Commit final
+      connection.commit()
+
+      println(s"Processed $featureCount features from file $originalName")
+
+    } catch {
+      case e: Exception =>
+        if (connection != null) connection.rollback()
+        e.printStackTrace()
+        throw e
+    } finally {
+      // Cerrar todos los recursos
+      if (jsonParser != null) jsonParser.close()
+      if (reader != null) reader.close()
+      if (stmt != null) stmt.close()
+      if (connection != null) connection.close()
+    }
+  }
+
+  def captureJsonObject(parser: com.fasterxml.jackson.core.JsonParser, builder: StringBuilder): Unit = {
+    var depth = 0
+    var token = parser.getCurrentToken
+    var firstToken = true
+
+    // Determinar si estamos iniciando con un objeto o un array
+    val isObject = token == com.fasterxml.jackson.core.JsonToken.START_OBJECT
+
+    do {
+      // Añadir el token al builder
+      if (token == com.fasterxml.jackson.core.JsonToken.FIELD_NAME) {
+        if (!firstToken && depth == 1) builder.append(",")
+        builder.append("\"").append(parser.getCurrentName).append("\":")
+      } else {
+        if (!firstToken && (token == com.fasterxml.jackson.core.JsonToken.START_OBJECT ||
+          token == com.fasterxml.jackson.core.JsonToken.START_ARRAY)) {
+          if (depth > 1) builder.append(",")
+        }
+
+        token match {
+          case com.fasterxml.jackson.core.JsonToken.START_OBJECT => builder.append("{")
+          case com.fasterxml.jackson.core.JsonToken.END_OBJECT => builder.append("}")
+          case com.fasterxml.jackson.core.JsonToken.START_ARRAY => builder.append("[")
+          case com.fasterxml.jackson.core.JsonToken.END_ARRAY => builder.append("]")
+          case com.fasterxml.jackson.core.JsonToken.VALUE_STRING =>
+            builder.append("\"").append(parser.getValueAsString).append("\"")
+          case com.fasterxml.jackson.core.JsonToken.VALUE_NUMBER_INT =>
+            builder.append(parser.getValueAsLong)
+          case com.fasterxml.jackson.core.JsonToken.VALUE_NUMBER_FLOAT =>
+            builder.append(parser.getValueAsDouble)
+          case com.fasterxml.jackson.core.JsonToken.VALUE_TRUE => builder.append("true")
+          case com.fasterxml.jackson.core.JsonToken.VALUE_FALSE => builder.append("false")
+          case com.fasterxml.jackson.core.JsonToken.VALUE_NULL => builder.append("null")
+          case _ => // No hacer nada para otros tokens
+        }
+      }
+
+      firstToken = false
+
+      // Controlar la profundidad
+      if (token == com.fasterxml.jackson.core.JsonToken.START_OBJECT ||
+        token == com.fasterxml.jackson.core.JsonToken.START_ARRAY) {
+        depth += 1
+      } else if (token == com.fasterxml.jackson.core.JsonToken.END_OBJECT ||
+        token == com.fasterxml.jackson.core.JsonToken.END_ARRAY) {
+        depth -= 1
+      }
+
+      // Leer el siguiente token
+      token = parser.nextToken()
+
+      // Salir cuando hayamos cerrado el objeto/array inicial
+    } while (depth > 0)
   }
 
   def sql_queries(fileName: String, contentType: String, teamsList: Seq[String], project: String, location: String, categoriesList: Seq[String], geojsonData: Value.Value): Unit = {
